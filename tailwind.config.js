@@ -29,7 +29,7 @@ export default {
   				'-apple-system',
   				'SF Pro Text',
   				'SF Pro Icons',
-  				'Helvetica Neue"',
+  				'Helvetica Neue',
   				'Helvetica',
   				'Arial',
   				'sans-serif'
