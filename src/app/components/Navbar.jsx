@@ -20,7 +20,7 @@ const navItems = [
   { name: "Global Business", link: "global-business" },
 ];
 const navItemsTwo = [
-  { name: "Project", link: "project" },
+  { name: "Projects", link: "projects" },
   { name: "Events", link: "events" },
   { name: "Our Teams", link: "our-teams" },
 ];

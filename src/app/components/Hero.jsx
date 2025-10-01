@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import gsap from "gsap";
@@ -16,7 +18,17 @@ const Hero = () => {
 
   // Handle video fully loaded and can play
   const handleVideoReady = () => {
-    setLoading(false);
+    // Fade in the video smoothly
+    if (videoRef.current) {
+      gsap.to(videoRef.current, {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        onComplete: () => setLoading(false),
+      });
+    } else {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -24,7 +36,7 @@ const Hero = () => {
 
     // In case the video is already cached and ready
     if (video && video.readyState >= 3) {
-      setLoading(false);
+      handleVideoReady();
     } else if (video) {
       video.addEventListener("canplaythrough", handleVideoReady);
     }
@@ -77,6 +89,7 @@ const Hero = () => {
           loop
           muted
           playsInline
+          style={{ opacity: 0 }} // start hidden, fade in when ready
           className="absolute left-0 top-0 w-full h-full object-cover object-center"
         />
 
