@@ -11,8 +11,19 @@ import { Separator } from "./ui/Separator";
 
 
  
-const navItems = ["VTX", "ROX", "AutoCare 360", "RhinoMotive", "Global Business"  ];
-const navItemsTwo = ["Project", "Events", "Our Teams" ];
+
+const navItems = [
+  { name: "VTX", link: "vtx" },
+  { name: "ROX", link: "rox" },
+  { name: "AutoCare 360", link: "autocare" },
+  { name: "RhinoMotive", link: "rhinomotive" },
+  { name: "Global Business", link: "global-business" },
+];
+const navItemsTwo = [
+  { name: "Project", link: "project" },
+  { name: "Events", link: "events" },
+  { name: "Our Teams", link: "our-teams" },
+];
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
@@ -95,10 +106,10 @@ const NavBar = () => {
               {navItems.map((item, index) => (
                 <a
                   key={index}
-                  href={`#${item.toLowerCase()}`}
+                  href={`${item.link.toLowerCase()}`}
                   className="nav-hover-btn"
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </div>
@@ -109,10 +120,10 @@ const NavBar = () => {
               {navItemsTwo.map((item, index) => (
                 <a
                   key={index}
-                  href={`#${item.toLowerCase()}`}
+                  href={`${item.link.toLowerCase()}`}
                   className="nav-hover-btn"
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </div>

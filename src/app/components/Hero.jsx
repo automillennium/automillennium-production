@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { TiLocationArrow } from "react-icons/ti";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import Button from "./Button";
 
@@ -12,10 +12,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [loading, setLoading] = useState(true);
+  const videoRef = useRef(null);
 
-  const handleVideoLoad = () => {
+  // Handle video fully loaded and can play
+  const handleVideoReady = () => {
     setLoading(false);
   };
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    // In case the video is already cached and ready
+    if (video && video.readyState >= 3) {
+      setLoading(false);
+    } else if (video) {
+      video.addEventListener("canplaythrough", handleVideoReady);
+    }
+
+    return () => {
+      if (video) {
+        video.removeEventListener("canplaythrough", handleVideoReady);
+      }
+    };
+  }, []);
 
   useGSAP(() => {
     gsap.set("#video-frame", {
@@ -38,7 +57,7 @@ const Hero = () => {
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
       {loading && (
-        <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
+        <div className="flex-center absolute z-[100] h-dvh w-screen bg-violet-50">
           <div className="three-body">
             <div className="three-body__dot"></div>
             <div className="three-body__dot"></div>
@@ -52,30 +71,17 @@ const Hero = () => {
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
       >
         <video
-          // src="/videos/car-hero-1.mp4"
+          ref={videoRef}
           src="https://automillennium.com/wp-content/uploads/2025/07/amg-video-1920x1080-1.mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="absolute left-0 top-0 size-full object-cover object-center"
-          onLoadedData={handleVideoLoad}
+          className="absolute left-0 top-0 w-full h-full object-cover object-center"
         />
 
-        <div className="absolute left-0 top-0 z-40 size-full">
-          {/* <div className="mt-24 px-5 sm:px-10">
-            <p className="mb-5 max-w-96 font-robert-regular text-blue-100 !text-[30px]">
-              Built for You
-              <br /> Designed for the Drive
-            </p>
-
-            <Button
-              id="watch-trailer"
-              title="Consult US"
-              leftIcon={<TiLocationArrow />}
-              containerClass="bg-yellow-300 flex-center gap-1"
-            />
-          </div> */}
+        <div className="absolute left-0 top-0 z-40 w-full h-full">
+          {/* Overlay content goes here */}
         </div>
       </div>
     </div>
@@ -83,4 +89,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
