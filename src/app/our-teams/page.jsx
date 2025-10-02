@@ -1,43 +1,71 @@
 "use client";
 
-import Image from "next/image";
-import { Separator } from "../components/ui/Separator";
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import executives from "./team";
 
-const executives = [
-  { name: "Tim Cook", title: "CEO", image: "/placeholder1.png" },
-  { name: "Katherine Adams", title: "Senior VP and General Counsel", image: "/placeholder2.png" },
-  { name: "Eddy Cue", title: "Senior VP Services", image: "/placeholder3.png" },
-  { name: "Craig Federighi", title: "Senior VP Software Engineering", image: "/placeholder4.png" },
-  { name: "John Giannandrea", title: "Senior VP Machine Learning and AI", image: "/placeholder5.png" },
-  { name: "Greg Joswiak", title: "Senior VP Worldwide Marketing", image: "/placeholder6.png" },
-  { name: "Sabih Khan", title: "Chief Operating Officer", image: "/placeholder7.png" },
-  { name: "Deirdre O’Brien", title: "Senior VP Retail + People", image: "/placeholder8.png" },
-];
+// Fade-in animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.6 },
+  }),
+};
 
-export default function Executives() {
+const ProfileCard = ({ imageUrl, name, title, link, index }) => (
+  <motion.div
+    className="rounded-xl shadow-xl overflow-hidden text-left transition-all duration-300 hover:shadow-2xl"
+    custom={index}
+    initial="hidden"
+    animate="visible"
+    variants={fadeInUp}
+  >
+    <div className="bg-gray-50 flex justify-center items-center">
+      <img
+        className="w-full h-[200px] block rounded-t-xl object-contain"
+        src={imageUrl}
+        alt={name}
+      />
+    </div>
+    <div className="p-4 bg-transparent">
+      <Link
+        href={`/our-teams/${link}`}
+        className="text-xl text-blue-500 hover:text-blue-800 font-semibold inline-block mb-1 transition duration-150 ease-in-out"
+      >
+        {name}
+      </Link>
+      <p className="text-base text-white m-0">{title}</p>
+    </div>
+  </motion.div>
+);
+
+const TeamsPage = () => {
   return (
-    <div className="bg-black h-[100vh]">
-
-    <div className="max-w-6xl mx-auto px-4 py-10 pt-40">
-          <h1 className="text-4xl font-bold text-white mb-4 text-center">Our Team</h1>
-      <Separator/>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-20">
-        {executives.map((exec, idx) => (
-          <div key={idx} className="bg-gray-100 p-4 rounded-lg text-center">
-            <div className="w-32 h-32 mx-auto mb-4 relative">
-              <Image 
-                src={exec.image} 
-                alt={exec.name} 
-                fill
-                className="object-cover rounded-lg"
-                />
-            </div>
-            <h2 className="text-blue-600 font-semibold">{exec.name}</h2>
-            <p className="text-gray-700 text-sm">{exec.title}</p>
-          </div>
-        ))}
+    <div className="bg-black min-h-screen font-sans">
+      <div className="max-w-6xl mx-auto px-4 py-10 pt-20 sm:pt-40">
+        <div className="border-b border-gray-200">
+          <h1 className="text-center text-[40px] font-semibold tracking-widest uppercase text-gray-500 pb-">
+            Meet Our Leadership
+          </h1>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 md:mt-20">
+          {executives.map((exec, idx) => (
+            <ProfileCard
+              key={idx}
+              index={idx}
+              imageUrl={exec.image}
+              name={exec.name}
+              title={exec.title}
+              link={exec.link}
+            />
+          ))}
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default TeamsPage;
