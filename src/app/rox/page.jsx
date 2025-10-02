@@ -126,19 +126,16 @@ useGSAP(() => {
       <div className="relative mb-8 flex flex-col items-center gap-3 pt-36">
         {/* Logo with fade-in animation */}
         <img
-          src="/img/rhino-white.png"
+          src="/img/rox-white.png"
           alt="VTX Logo"
           className="page-logo h-[300px] w-[400px] object-contain"
         />
 
         <div className="text-center text-white text-[20px] pb-10 max-w-[800px]">
           <p className="page-logo">
-            RHINOMOTIVE is an industry GAME CHANGER and the only automotive brand
-            in the world that offers a one-stop automotive solution with 1000+ products.
-            What makes RHINOMOTIVE the best brand in the market is that it offers an
-            extensive high-quality automotive aftermarket product portfolio and a complete
-            integrated, efficient workflow system that reduces cost, increases profit margins,
-            productivity & efficiency.
+   Fix accessories not fixed by the manufacturer such as wireless chargers,
+parking sensors, rear entertainment systems, etc.
+for added value and comfort
           </p>
         </div>
       </div>
@@ -152,7 +149,7 @@ useGSAP(() => {
               <div className="three-body__dot"></div>
               <div className="three-body__dot"></div>
             </div>
-            <p className="text-white text-lg font-light">Loading experience...</p>
+            <p className="text-white text-lg font-light">Loading ...</p>
           </div>
         </div>
       )}
@@ -198,7 +195,7 @@ useGSAP(() => {
               type="video/webm" 
             />
             <source 
-              src="https://automillennium.com/wp-content/uploads/2023/03/RHINOMOTIVE-BRAND.mp4" 
+              src="https://automillennium.com/wp-content/uploads/2022/03/RetroFit-Final.mp4" 
               type="video/mp4" 
             />
             {/* Fallback for very old browsers */}
