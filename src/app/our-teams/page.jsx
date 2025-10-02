@@ -23,22 +23,22 @@ const ProfileCard = ({ imageUrl, name, title, link, index }) => (
     animate="visible"
     variants={fadeInUp}
   >
-    <div className="bg-gray-50 flex justify-center items-center">
+      <Link
+        href={`/our-teams/${link}`}
+        className="text-xl text-[#0070c9] hover:text-blue-800 font-normal inline-block mb-1 transition duration-150 ease-in-out"
+      >
+    <div className="bg-gray-50 rounded-t-xl flex justify-center items-center">
       <img
-        className="w-full h-[200px] block rounded-t-xl object-contain"
+        className=" h-[192px] w-[230px] block  object-contain"
         src={imageUrl}
         alt={name}
       />
     </div>
-    <div className="p-4 bg-transparent">
-      <Link
-        href={`/our-teams/${link}`}
-        className="text-xl text-[#0070c9] hover:text-blue-800 font-semibold inline-block mb-1 transition duration-150 ease-in-out"
-      >
+    <div className="py-4 bg-transparent">
         {name}
-      </Link>
       <p className="text-base text-white m-0">{title}</p>
     </div>
+      </Link>
   </motion.div>
 );
 
