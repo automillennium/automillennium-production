@@ -14,16 +14,16 @@ import { Separator } from "./ui/Separator";
  
 
 const navItems = [
-  { name: "VTX", link: "vtx" },
-  { name: "ROX", link: "rox" },
-  { name: "AutoCare 360", link: "autocare" },
-  { name: "RhinoMotive", link: "rhinomotive" },
-  { name: "Global Business", link: "global-business" },
+  { name: "VTX", link: "/vtx" },
+  { name: "ROX", link: "/rox" },
+  { name: "AutoCare 360", link: "/autocare" },
+  { name: "RhinoMotive", link: "/rhinomotive" },
+  { name: "Global Business", link: "/global-business" },
 ];
 const navItemsTwo = [
-  { name: "Projects", link: "projects" },
-  { name: "Events", link: "events" },
-  { name: "Our Teams", link: "our-teams" },
+  { name: "Projects", link: "/projects" },
+  { name: "Events", link: "/events" },
+  { name: "Our Teams", link: "/our-teams" },
 ];
 
 const NavBar = () => {
