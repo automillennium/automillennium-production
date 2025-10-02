@@ -380,3 +380,36 @@ clip-path: polygon(52% 0, 100% 89%, 50% 100%, 0 86%);
     @apply bg-background text-foreground;
   }
 }
+
+
+
+
+@layer components {
+  /* This is the gradient for the overlay on each slide */
+  .slide-item::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black from-5% to-transparent; /* Equivalent to your CSS gradient */
+  }
+}
+
+@layer utilities {
+  /* The custom keyframes for content animation */
+  @keyframes showContent {
+    to {
+      transform: translateY(0);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  /* Apply the animation */
+  .animate-show-content-1 {
+    animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
+  }
+  .animate-show-content-2 {
+    animation: showContent 0.5s 1s ease-in-out 1 forwards;
+  }
+  .animate-show-content-3 {
+    animation: showContent 1.3s ease-in-out 1 forwards;
+  }
+}

@@ -33,7 +33,7 @@ const ProfileCard = ({ imageUrl, name, title, link, index }) => (
     <div className="p-4 bg-transparent">
       <Link
         href={`/our-teams/${link}`}
-        className="text-xl text-blue-500 hover:text-blue-800 font-semibold inline-block mb-1 transition duration-150 ease-in-out"
+        className="text-xl text-[#0070c9] hover:text-blue-800 font-semibold inline-block mb-1 transition duration-150 ease-in-out"
       >
         {name}
       </Link>
