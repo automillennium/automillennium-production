@@ -1,3 +1,4 @@
+"use client"
 import clsx from "clsx";
 import gsap from "gsap";
 import { useWindowScroll } from "react-use";

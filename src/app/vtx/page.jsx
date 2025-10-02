@@ -1,19 +1,3 @@
-// import React from 'react'
-
-// function page() {
-
-// // src="https://automillennium.com/wp-content/uploads/2023/08/VTX.mp4"
-
-//   return (
-//     <div>vtl</div>
-//   )
-// }
-
-// export default page
-
-
-
-
 "use client";
 
 import gsap from "gsap";
@@ -52,6 +36,14 @@ const Page = () => {
   }, []);
 
   useGSAP(() => {
+    // Fade in logo on page load
+    gsap.fromTo(
+      ".page-logo",
+      { opacity: 0, y: 50 }, // start hidden and slightly down
+      { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.8 } // fade in nicely
+    );
+
+    // Clip scroll animation
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#clip",
@@ -65,33 +57,35 @@ const Page = () => {
 
     clipAnimation.to(".mask-clip-path", {
       width: "100vw",
-      height: "120vh",
+      height: "100%",
       borderRadius: 0,
     });
   });
 
   return (
     <div id="about" className="min-h-screen w-screen bg-black ">
-      <div className="relative mb-8 flex flex-col items-center gap-5 pb-36">
-      
-        {/* <AnimatedTitle
-          title="Discover the world’s <br /> largest shared <b>r</b>ide"
-          containerClass="mt-5  text-center !text-white"
-        /> */}
+      <div className="relative mb-8 flex flex-col items-center gap-3 pt-36">
+        {/* Logo with fade-in animation */}
+        <img
+          src="/img/vtx-white.png"
+          alt="VTX Logo"
+          className="page-logo h-[300px] w-[400px] object-contain"
+        />
 
-        <img src="/img/vtx-white.png" alt="" className="h-[200px] w-[400px] object-contain"/>
+        <div className="text-center text-white text-[20px] pb-10">
+          <p className="page-logo">Automotive Upgrades & customization Factory
 
-        <div className="about-subtext">
-          <p>The Ride of Rides begins—your car, now an epic masterpiece</p>
-          <p className="text-gray-500">
-            Automillennium unites every enthusiast from countless garages and streets, both digital and real, into a unified Car Culture
-          </p>
+</p>
+          {/* <p className="text-gray-500">
+            Automillennium unites every enthusiast from countless garages and streets,
+            both digital and real, into a unified Car Culture
+          </p> */}
         </div>
       </div>
 
       {/* Loader while video loads */}
       {loading && (
-        <div className="flex-center absolute z-[100] h-dvh w-screen bg-violet-50">
+        <div className="flex-center absolute z-[100] h-dvh w-screen bg-black">
           <div className="three-body">
             <div className="three-body__dot"></div>
             <div className="three-body__dot"></div>
