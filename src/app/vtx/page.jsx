@@ -5,8 +5,6 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useState, useEffect, useRef } from "react";
 
-import AnimatedTitle from "../components/AnimatedTitle";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
@@ -21,7 +19,6 @@ const Page = () => {
   useEffect(() => {
     const video = videoRef.current;
 
-    // if already cached and ready
     if (video && video.readyState >= 3) {
       setLoading(false);
     } else if (video) {
@@ -39,8 +36,8 @@ const Page = () => {
     // Fade in logo on page load
     gsap.fromTo(
       ".page-logo",
-      { opacity: 0, y: 50 }, // start hidden and slightly down
-      { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.8 } // fade in nicely
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.8 }
     );
 
     // Clip scroll animation
@@ -60,52 +57,137 @@ const Page = () => {
       height: "100%",
       borderRadius: 0,
     });
+
+    // Fade in/out on scroll for all elements with .fade-scroll
+    gsap.utils.toArray(".fade-scroll").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "bottom 20%",
+            scrub: true,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    });
   });
 
   return (
-    <div id="about" className="min-h-screen w-screen bg-black ">
-      <div className="relative mb-8 flex flex-col items-center gap-3 pt-36">
-        {/* Logo with fade-in animation */}
-        <img
-          src="/img/vtx-white.png"
-          alt="VTX Logo"
-          className="page-logo h-[300px] w-[400px] object-contain"
-        />
+    <div className="bg-black">
+      <div id="about" className="min-h-screen w-screen bg-black ">
+        <div className="relative mb-8 flex flex-col items-center gap-3 pt-36">
+          {/* Logo */}
+          <img
+            src="/img/vtx-white.png"
+            alt="VTX Logo"
+            className="page-logo h-[300px] w-[400px] object-contain fade-scroll"
+          />
 
-        <div className="text-center text-white text-[20px] pb-10">
-          <p className="page-logo">Automotive Upgrades & customization Factory
-
-</p>
-          {/* <p className="text-gray-500">
-            Automillennium unites every enthusiast from countless garages and streets,
-            both digital and real, into a unified Car Culture
-          </p> */}
-        </div>
-      </div>
-
-      {/* Loader while video loads */}
-      {loading && (
-        <div className="flex-center absolute z-[100] h-dvh w-screen bg-black">
-          <div className="three-body">
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
+          <div className="text-center text-white text-[20px] pb-10 fade-scroll">
+            <p className="max-w-[1100px]">
+              VTX is Auto Millennium’s premium line of vehicle protection solutions,
+              designed to keep your car looking brand-new while safeguarding it from
+              harsh weather, road debris, and everyday wear. Our products combine
+              advanced technology with professional application, ensuring your vehicle
+              maintains its value, shine, and performance over time.
+            </p>
           </div>
         </div>
-      )}
 
-      <div className="h-dvh w-screen relative bg-black" id="clip">
-        <div className="mask-clip-path about-image">
-          <video
-            ref={videoRef}
-            src="https://automillennium.com/wp-content/uploads/2023/08/VTX.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute left-0 top-0 size-full object-cover object-center"
-          />
+        {/* Loader */}
+        {loading && (
+          <div className="flex-center absolute z-[100] h-dvh w-screen bg-black">
+            <div className="three-body">
+              <div className="three-body__dot"></div>
+              <div className="three-body__dot"></div>
+              <div className="three-body__dot"></div>
+            </div>
+          </div>
+        )}
+
+        {/* Video */}
+        <div className="h-dvh w-screen relative bg-black" id="clip">
+          <div className="mask-clip-path about-image">
+            <video
+              ref={videoRef}
+              src="https://automillennium.com/wp-content/uploads/2023/08/VTX.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute left-0 top-0 size-full object-cover object-center"
+            />
+          </div>
         </div>
+
+        {/* Services Section */}
+        <section className="py-20 px-10 max-w-[1200px] mx-auto">
+          <h1 className="fade-scroll text-white text-center text-[34px] py-10">
+            Our Services
+          </h1>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-1 text-white">
+            {[
+              {
+                title: "Paint Protection Film (PPF)",
+                items: [
+                  "Invisible shield that protects against stone chips, scratches, and road debris.",
+                  "High gloss & self-healing technology.",
+                  "Custom-cut for precision fit.",
+                ],
+              },
+              {
+                title: "Ceramic Coating",
+                items: [
+                  "Long-lasting hydrophobic layer.",
+                  "UV resistance & high gloss finish.",
+                  "Easy maintenance with anti-dirt technology.",
+                ],
+              },
+              {
+                title: "Window Tinting",
+                items: [
+                  "Heat rejection for comfort.",
+                  "UV protection for passengers.",
+                  "Stylish shades with legal compliance.",
+                ],
+              },
+              {
+                title: "Interior & Exterior Detailing",
+                items: [
+                  "Deep cleaning and restoration.",
+                  "Leather, fabric, and dashboard protection.",
+                  "Keeps your car fresh inside-out.",
+                ],
+              },
+              {
+                title: "Tailored Protection (Custom Packages)",
+                items: [
+                  "Customized protection packages designed for your vehicle.",
+                  "Combine PPF, ceramic coating, tinting & detailing for full coverage.",
+                  "Professional consultation to choose the perfect package.",
+                ],
+              },
+            ].map((service, i) => (
+              <div
+                key={i}
+                className="service-item p-6 bg-gray-900 rounded-lg shadow-lg fade-scroll"
+              >
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <ul className="list-disc list-inside text-gray-300">
+                  {service.items.map((item, j) => (
+                    <li key={j}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
