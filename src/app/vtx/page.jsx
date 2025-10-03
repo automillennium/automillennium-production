@@ -176,7 +176,7 @@ const Page = () => {
             ].map((service, i) => (
               <div
                 key={i}
-                className="service-item p-6 bg-gray-900 rounded-lg shadow-lg fade-scroll"
+                className="service-item p-6 bg-neutral-900  rounded-lg shadow-lg fade-scroll"
               >
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <ul className="list-disc list-inside text-gray-300">
