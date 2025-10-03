@@ -34,7 +34,7 @@ const ExecutiveProfile = () => {
 
         {/* Header */}
         <motion.header
-          className="mb-16 border-b border-gray-200 pb-4 mt-20"
+          className="mb-16 border-b border-gray-200 pb-8 mt-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}

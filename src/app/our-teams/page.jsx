@@ -46,7 +46,7 @@ const TeamsPage = () => {
   return (
     <div className="bg-black min-h-screen font-sans">
       <div className="max-w-6xl mx-auto px-4 py-10 pt-20 sm:pt-40">
-        <div className="border-b border-gray-200">
+        <div className="border-b border-gray-200 pb-8">
           <h1 className="text-center text-[40px] font-semibold tracking-widest uppercase text-gray-500 pb-">
             Meet Our Leadership
           </h1>
