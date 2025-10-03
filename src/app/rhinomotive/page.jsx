@@ -437,7 +437,7 @@ const Page = () => {
 
       {/* Divisions Section */}
       <section className="px-6 lg:px-20 py-16">
-        <h2 className="text-4xl font-bold mb-10 text-center fade-scroll">DIVISIONS</h2>
+        <h2 className="text-4xl font-bold mb-10 text-center fade-scroll text-white">DIVISIONS</h2>
         <div className="grid gap-10 md:grid-cols-2">
           {[
             { title: "1. CAR CARE", text: "A wide range of the latest tech unbeatable car care products" },
