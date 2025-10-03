@@ -89,7 +89,7 @@ const NavBar = () => {
       <header className="absolute top-1/2 w-full -translate-y-1/2">
 <nav className="flex size-full items-center justify-center p-4 !font-apple gap-[35px] relative">
           {/* Logo and Product button */}
-          <div className="absolute left-32 top-4 flex items-center gap-7">
+          <div className="absolute left-20 top-4 flex items-center gap-7">
             <img src="/img/amg-new-logo.png" alt="logo" className="w-36" />
 
             {/* <Button
