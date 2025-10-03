@@ -58,7 +58,7 @@ const About = () => {
 
 
                 <video
-            src={"/videos/car-hero-1.mp4"}
+            src={"/videos/RR.mp4"}
             autoPlay
             loop
             muted

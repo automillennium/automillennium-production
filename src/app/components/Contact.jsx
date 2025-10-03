@@ -18,7 +18,7 @@ const Contact = () => {
           />
           <ImageClipBox
             src="/img/_L4A8896 copy.jpg"
-            clipClass="contact-clip-path-2 lg:translate-y-40 translate-y-60"
+            clipClass="contact-clip-path-2 lg:translate-y-10 translate-y-60"
           />
           
         </div>
