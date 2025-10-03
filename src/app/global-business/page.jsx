@@ -39,7 +39,8 @@ const Page = () => {
   };
 
 // Remove the useGSAP hook and the separate useEffect hook
-// and replace them with a single useEffect hook
+// and replace them with a single useEffect hook 
+
 useEffect(() => {
   const video = videoRef.current;
   if (!video) return;

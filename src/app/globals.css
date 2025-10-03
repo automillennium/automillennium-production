@@ -388,7 +388,7 @@ clip-path: polygon(52% 0, 100% 89%, 50% 100%, 0 86%);
   /* This is the gradient for the overlay on each slide */
   .slide-item::after {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-t from-black from-5% to-transparent; /* Equivalent to your CSS gradient */
+    /* @apply absolute inset-0 bg-gradient-to-t from-black from-5% to-transparent;  */
   }
 }
 
