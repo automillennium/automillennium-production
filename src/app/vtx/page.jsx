@@ -174,17 +174,21 @@ const Page = () => {
                 ],
               },
             ].map((service, i) => (
-              <div
-                key={i}
-                className="service-item p-6 bg-neutral-900  rounded-lg shadow-lg fade-scroll"
-              >
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <ul className="list-disc list-inside text-gray-300">
-                  {service.items.map((item, j) => (
-                    <li key={j}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+   <div
+    key={i}
+    // Added 'text-left' to the container and removed 'list-inside' 
+    // to ensure the bullet points start right at the edge of the padding.
+    className="service-item p-6 bg-neutral-900 rounded-lg shadow-lg fade-scroll text-left"
+>
+    <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+    
+    {/* Use 'list-disc' and 'pl-5' for margin, which often creates better alignment */}
+    <ul className="list-disc text-gray-300 pl-5"> 
+        {service.items.map((item, j) => (
+            <li key={j}>{item}</li>
+        ))}
+    </ul>
+</div>
             ))}
           </div>
         </section>
