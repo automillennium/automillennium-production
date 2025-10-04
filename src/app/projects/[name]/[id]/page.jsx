@@ -21,8 +21,8 @@ export default function ProjectPage() {
     if (!images || images.length === 0) return null;
 
     return (
-      <div className="mb-12">
-        <h2 className="text-white text-3xl font-bold mb-6">{title}</h2>
+      <div className="mb-12 px-40">
+        <h2 className="text-white text-center text-3xl font-bold mb-6">{title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {images.map((img, idx) => (
             <div
