@@ -96,7 +96,7 @@ export default function ProjectPage() {
       {/* Main Slider */}
       <div className="slider h-screen -mt-[50px] relative">
         <div className="slide-item absolute inset-0 overflow-hidden opacity-100 z-10">
-          <Image
+          <img
             src={project.bannerImg}
             alt={project.title}
             fill
@@ -159,7 +159,7 @@ export default function ProjectPage() {
                     : "scale-90 brightness-50"
                 }`}
               >
-                <Image
+                <img
                   src={model.image}
                   alt={model.name}
                   fill

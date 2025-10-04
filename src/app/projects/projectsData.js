@@ -120,18 +120,65 @@ export const sliderData = [
   },
   {
     id: 1,
-    title: "Mercedes",
+    title: "Rolls Royce",
     type: "luxury",
     description: "Unparalleled craftsmanship and effortless power redefined.",
-    slug: "mercedes",
-    bannerImg:"/img/projects/bentley.webp",
+    slug: "rolls-royce",
+    bannerImg:"https://automillennium.com/wp-content/uploads/2025/07/BLACK-ROLLS-1.webp",
+
+
+
 
 
     models: [
       {
         name: "Mercedes Model 1",
-        image: "/img/projects/bentley.webp",
+        image: "https://automillennium.com/wp-content/uploads/2023/10/7L4A6763-copy.jpg",
                 slug:"model-1",
+
+        gallery: [
+          "https://automillennium.com/wp-content/uploads/photo-gallery/4_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/5_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/3_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+        ],
+        interior: [
+          "https://automillennium.com/wp-content/uploads/photo-gallery/4_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/5_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/3_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+        ],
+        exterior: [
+          "https://automillennium.com/wp-content/uploads/photo-gallery/4_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/5_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/3_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+        ],
+      },
+
+            {
+        name: "Mercedes Model 1",
+        image: "https://automillennium.com/wp-content/uploads/2023/10/BLACK-ROLLS-MODEL-PHOTO-1.webp",
+                slug:"model-1",
+
+        gallery: [
+          "https://automillennium.com/wp-content/uploads/photo-gallery/4_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/5_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/3_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+        ],
+        interior: [
+          "https://automillennium.com/wp-content/uploads/photo-gallery/4_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/5_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/3_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+        ],
+        exterior: [
+          "https://automillennium.com/wp-content/uploads/photo-gallery/4_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/5_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+          "https://automillennium.com/wp-content/uploads/photo-gallery/3_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
+        ],
+      },
+
+            {
+        name: "Mercedes Model 1",
+        image: "https://automillennium.com/wp-content/uploads/2025/07/1.jpg",
+        slug:"model-1",
 
         gallery: [
           "https://automillennium.com/wp-content/uploads/photo-gallery/4_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).webp",
