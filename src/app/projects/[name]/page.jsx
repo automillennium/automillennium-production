@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { sliderData } from "../projectsData";
 import { Poppins } from "next/font/google";
+import { motion } from "framer-motion"; // <-- Import Framer Motion
 
 // --- Font Configuration ---
 const poppins = Poppins({
@@ -27,24 +28,20 @@ export default function ProjectPage() {
 
   if (!project) return <p className="text-white">Project not found</p>;
 
-  // --- Model Navigation ---
   const nextModel = () =>
     setActiveModel((prev) => Math.min(prev + 1, project.models.length - 1));
   const prevModel = () =>
     setActiveModel((prev) => Math.max(prev - 1, 0));
 
-  // --- Thumbnail click ---
   const handleThumbnailClick = (idx) => {
     if (idx !== activeModel) {
       setActiveModel(idx);
     } else {
-      // Navigate using slug
       const dynamicRoute = `/projects/${project.slug}/${project.models[idx].slug}`;
       router.push(dynamicRoute);
     }
   };
 
-  // --- Center padding calculation ---
   const calculatePadding = useCallback(() => {
     if (modelRef.current) {
       const container = modelRef.current;
@@ -67,7 +64,6 @@ export default function ProjectPage() {
     return () => window.removeEventListener("resize", calculatePadding);
   }, [calculatePadding]);
 
-  // --- Center active thumbnail ---
   const centerThumbnail = useCallback(() => {
     if (modelRef.current) {
       const container = modelRef.current;
@@ -85,6 +81,16 @@ export default function ProjectPage() {
     centerThumbnail();
   }, [activeModel, centerThumbnail]);
 
+  // --- Framer Motion variants ---
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.3, duration: 0.8 },
+    }),
+  };
+
   return (
     <div className={`min-h-screen bg-black ${poppins.variable} font-poppins`}>
       {/* Main Slider */}
@@ -98,9 +104,32 @@ export default function ProjectPage() {
             priority
           />
           <div className="content absolute left-[10%] top-[20%] w-[500px] max-w-[80%] z-[1] text-white">
-            <p className="uppercase tracking-[10px]">{project.type}</p>
-            <h2 className="text-[100px] max-[678px]:text-[60px]">{project.title}</h2>
-            <p>{project.description}</p>
+            <motion.p
+              className="uppercase tracking-[10px]"
+              variants={textVariants}
+              initial="hidden"
+              animate="visible"
+              custom={0}
+            >
+              {project.type}
+            </motion.p>
+            <motion.h2
+              className="text-[100px] max-[678px]:text-[60px]"
+              variants={textVariants}
+              initial="hidden"
+              animate="visible"
+              custom={1}
+            >
+              {project.title}
+            </motion.h2>
+            <motion.p
+              variants={textVariants}
+              initial="hidden"
+              animate="visible"
+              custom={2}
+            >
+              {project.description}
+            </motion.p>
           </div>
           <div className="absolute inset-0 bg-black/50 z-0"></div>
         </div>

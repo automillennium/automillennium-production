@@ -3,31 +3,52 @@
 import React, { useState } from "react";
 import { useParams } from "next/navigation";
 import { sliderData } from "../../projectsData";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function ProjectPage() {
   const params = useParams(); // { slug }
   const projectSlug = params.name;
 
   const project = sliderData.find((p) => p.slug === projectSlug);
-
   const [activeModel, setActiveModel] = useState(0);
 
   if (!project) return <div className="text-white p-4">Project not found</div>;
 
   const model = project.models[activeModel];
 
-  const renderGallery = (title, images) => {
+  // --- Animation Variants ---
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+  };
+
+  const renderGallery = (title, images, firstRow = false) => {
     if (!images || images.length === 0) return null;
 
     return (
-      <div className="mb-12 px-40">
-        <h2 className="text-white text-center text-3xl font-bold mb-6">{title}</h2>
+      <motion.div
+        className="mb-12 px-4 sm:px-8 lg:px-40"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: firstRow ? 1 : 0.3 }}
+      >
+        <motion.h2
+          className="text-white text-center text-3xl font-bold mb-6"
+          variants={textVariants}
+        >
+          {title}
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {images.map((img, idx) => (
-            <div
+            <motion.div
               key={idx}
               className="relative w-full aspect-square overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]"
+              variants={imageVariants}
             >
               <img
                 src={img}
@@ -37,18 +58,23 @@ export default function ProjectPage() {
                 style={{ objectFit: "cover" }}
                 className="transition-opacity duration-500 hover:opacity-90"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     );
   };
 
   return (
     <div className="p-4 sm:p-8 bg-black min-h-screen">
-      <h1 className="text-white text-4xl mb-8 font-bold text-center mt-32">
+      <motion.h1
+        className="text-white text-4xl mb-8 font-bold text-center mt-32"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         {project.title} - {model.name} Gallery
-      </h1>
+      </motion.h1>
 
       {/* Model Navigation */}
       {project.models.length > 1 && (
@@ -69,13 +95,13 @@ export default function ProjectPage() {
         </div>
       )}
 
-      {/* Interior Gallery */}
-      {renderGallery("Interior", model.interior)}
+      {/* Interior Gallery (first row visible on load) */}
+      {renderGallery("Interior", model.interior, true)}
 
-      {/* Exterior Gallery */}
+      {/* Exterior Gallery (fade in on scroll) */}
       {renderGallery("Exterior", model.exterior)}
 
-      {/* General Gallery */}
+      {/* General Gallery (fade in on scroll) */}
       {renderGallery("Gallery", model.gallery)}
     </div>
   );

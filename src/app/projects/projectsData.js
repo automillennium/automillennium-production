@@ -91,7 +91,7 @@ export const sliderData = [
         ],
       },
           {
-        name: "Bentley Model 1",
+        name: "Bentley Model 2",
         image: "/img/projects/bentley.webp",
         slug:"model-2",
         gallery: [
