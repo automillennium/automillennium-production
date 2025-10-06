@@ -131,11 +131,22 @@ useGSAP(() => {
           className="page-logo h-[300px] w-[400px] object-contain"
         />
 
-        <div className="text-center text-white text-[20px] pb-10 max-w-[800px]">
-          <p className="page-logo">
-  AUTOCARE360 covers over 30 value added services for full car care & protection
-          </p>
-        </div>
+<section class="py-24 px-4 md:px-8 text-center bg-black">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-white text-5xl md:text-7xl font-extrabold tracking-tight mb-4 leading-snug">
+            Welcome to <span class="text-cyan-400">Auto Care 360</span>
+        </h1>
+        <p class="text-gray-400 text-xl md:text-2xl font-medium max-w-3xl mx-auto mb-10">
+            Premium Automotive Services. Trusted Partnerships. Total Care.
+        </p>
+
+        <p class="text-gray-300 text-lg md:text-xl max-w-4xl mx-auto">
+            Auto Care 360 is a leading automotive service and solutions company known for its **quality, reliability, and customer satisfaction**. We partner with car dealerships to deliver a wide range of services, from **detailing and paint protection to full vehicle preparation**, ensuring every car meets the highest standards before it reaches the customer.
+        </p>
+    </div>
+</section>
+
+
       </div>
 
       {/* Loading Overlay */}
@@ -211,6 +222,137 @@ useGSAP(() => {
           )}
         </div>
       </div>
+
+
+<div class="bg-black min-h-screen">
+  
+  <header class="pt-40 pb-20 px-4 md:px-8 text-center bg-zinc-900/50 backdrop-blur-sm">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-white text-6xl md:text-8xl font-extrabold tracking-tight mb-4 leading-none">
+        Driven by <span class="text-gray-400">Excellence.</span>
+      </h1>
+      <p class="text-gray-300 text-xl md:text-2xl max-w-3xl mx-auto mt-8">
+        At **Auto Care 360**, our commitment to excellence is at the core of everything we do. We provide premium automotive care through a blend of **innovation, precision, and trust**, extending our expertise across multiple markets and supporting some of the region’s largest dealership networks.
+      </p>
+    </div>
+  </header>
+
+  <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+    <h2 class="text-white text-4xl md:text-6xl font-bold text-center mb-16">
+      Our Services
+    </h2>
+
+    <div class="grid lg:grid-cols-1 gap-8">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 md:p-12 shadow-2xl transition duration-300 hover:shadow-cyan-500/10">
+        <h3 class="text-3xl font-bold text-white mb-6">
+          Complete Car Care Solutions for Dealership Operations
+        </h3>
+        <p class="text-lg text-gray-400 mb-8 max-w-3xl">
+          We add real value by ensuring vehicles are delivered in flawless condition, enhancing customer experience and brand perception. Our services include:
+        </p>
+
+        <ul class="grid md:grid-cols-2 gap-x-12 gap-y-4 list-none p-0">
+          <li class="text-xl text-white flex items-start group">
+            <svg class="w-5 h-5 mr-3 mt-1 text-cyan-400 flex-shrink-0 group-hover:text-cyan-300 transition" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Pre-Delivery Inspection (PDI)
+          </li>
+          <li class="text-xl text-white flex items-start group">
+            <svg class="w-5 h-5 mr-3 mt-1 text-cyan-400 flex-shrink-0 group-hover:text-cyan-300 transition" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Paint Protection Film (PPF) Installation
+          </li>
+          <li class="text-xl text-white flex items-start group">
+            <svg class="w-5 h-5 mr-3 mt-1 text-cyan-400 flex-shrink-0 group-hover:text-cyan-300 transition" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Ceramic Coating & Advanced Protection
+          </li>
+          <li class="text-xl text-white flex items-start group">
+            <svg class="w-5 h-5 mr-3 mt-1 text-cyan-400 flex-shrink-0 group-hover:text-cyan-300 transition" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Interior & Exterior Detailing
+          </li>
+          <li class="text-xl text-white flex items-start group">
+            <svg class="w-5 h-5 mr-3 mt-1 text-cyan-400 flex-shrink-0 group-hover:text-cyan-300 transition" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Custom Finishing and Restoration
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-10">
+      
+      <div class="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-8 md:p-12 transition duration-300 hover:bg-zinc-800/80">
+        <div class="mb-8">
+          <span class="text-5xl md:text-7xl font-extrabold text-cyan-400 block leading-none">
+            1,000+
+          </span>
+          <p class="text-xl text-gray-400 font-medium mt-1">
+            Skilled Professionals
+          </p>
+        </div>
+
+        <h3 class="text-4xl font-bold text-white mb-6">
+          Powered by People
+        </h3>
+
+        <p class="text-lg text-gray-300 mb-8">
+          Our team under the Auto Millennium Group umbrella brings together expertise in Automotive Detailing, Bodywork, Quality Control, and Customer Service. This enables us to take on large-scale projects, serving multiple dealerships simultaneously with speed and consistency.
+        </p>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="px-4 py-2 text-sm font-medium bg-zinc-700 text-white rounded-full">Automotive Detailing</span>
+          <span class="px-4 py-2 text-sm font-medium bg-zinc-700 text-white rounded-full">Bodywork & Paint</span>
+          <span class="px-4 py-2 text-sm font-medium bg-zinc-700 text-white rounded-full">Quality Control</span>
+        </div>
+      </div>
+
+      <div class="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-8 md:p-12 transition duration-300 hover:bg-zinc-800/80">
+        <div class="mb-8">
+          <span class="text-5xl md:text-7xl font-extrabold text-cyan-400 block leading-none">
+            360°
+          </span>
+          <p class="text-xl text-gray-400 font-medium mt-1">
+            Care Philosophy
+          </p>
+        </div>
+
+        <h3 class="text-4xl font-bold text-white mb-6">
+          What Sets Us Apart
+        </h3>
+
+        <p class="text-lg text-gray-300 mb-8">
+          Our integrated approach aligns seamlessly with dealership operations to deliver long-term value. We don’t just offer services; we create solutions that enhance customer satisfaction, maintain vehicle condition, and strengthen brand reputation.
+        </p>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="px-4 py-2 text-sm font-medium bg-zinc-700 text-white rounded-full">Enhance Customer Satisfaction</span>
+          <span class="px-4 py-2 text-sm font-medium bg-zinc-700 text-white rounded-full">Maintain Vehicle Condition</span>
+          <span class="px-4 py-2 text-sm font-medium bg-zinc-700 text-white rounded-full">Strengthen Brand Reputation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 md:px-8 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-white text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+        Built on <span class="text-gray-400">Integrity.</span> Driven by <span class="text-gray-400">Passion.</span>
+      </h2>
+      <p class="text-gray-300 text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+        Auto Care 360 shares the same core values as Auto Millennium: **integrity, teamwork, and excellence**. Our journey is powered by a passion for cars, for service, and for perfection in every detail.
+      </p>
+    </div>
+  </section>
+</div>
     </div>
   );
 };

@@ -25,39 +25,42 @@ const executives = [
       "Dipl.-Ing. (Arch.) Technische Universität Kaiserslautern, Germany"
     ]
   },
-  { 
-    name: "Saoud Aldweik", 
-    title: "Group Chief Financial Officer", 
-    image: "https://automillennium.com/wp-content/uploads/2025/08/3-e1755784336481.png",
-    link:"saoud-aldweid",
-    description: [
-      "Over 20 years of financial leadership experience across a range of industries",
-      "Certified Management Accountant (CMA), Certified Financial Consultant (CFC), and a Diploma in IFRS",
-      "Strong foundation in corporate strategy, financial management, transformation, business expansion, investments, and mergers and acquisitions"
-    ]
-  },
-  { 
-    name: "Mahmoud Nahouly", 
-    title: "Managing Director", 
-    image: "https://automillennium.com/wp-content/uploads/2022/02/Mahmoud-01-2.png",
-    link :"mahmoud-nahouly",
-    description: [
-      "Extensive sales and operations management experience within the automotive aftermarket segment",
-      "Advanced the B2C and B2B operational performance with distributor and retail clients in achieving double-digit growth year on year",
-      "Extensive experience in factory operation processes and product development",
-      "Holder of a Mechanical Engineering BSc"
-    ]
-  },
-  { 
-    name: "Sameem Sayed", 
-    title: "Group Human Capital Director", 
-    image: "https://automillennium.com/wp-content/uploads/2022/02/Sameem-01-3.png",
-    link :"sameem-sayed",
-    description: [
-      "Led and managed positions as HR Business Partner and Director Human Capital for over 18 years with international experience in Human Resources Management, Organizational Development, HR Business Partnering and Talent Development",
-      "Exposure to diverse sectors and leading companies across the Middle East (primarily UAE) and Europe"
-    ]
-  },
+
+
+
+  // { 
+  //   name: "Saoud Aldweik", 
+  //   title: "Group Chief Financial Officer", 
+  //   image: "https://automillennium.com/wp-content/uploads/2025/08/3-e1755784336481.png",
+  //   link:"saoud-aldweid",
+  //   description: [
+  //     "Over 20 years of financial leadership experience across a range of industries",
+  //     "Certified Management Accountant (CMA), Certified Financial Consultant (CFC), and a Diploma in IFRS",
+  //     "Strong foundation in corporate strategy, financial management, transformation, business expansion, investments, and mergers and acquisitions"
+  //   ]
+  // },
+  // { 
+  //   name: "Mahmoud Nahouly", 
+  //   title: "Managing Director", 
+  //   image: "https://automillennium.com/wp-content/uploads/2022/02/Mahmoud-01-2.png",
+  //   link :"mahmoud-nahouly",
+  //   description: [
+  //     "Extensive sales and operations management experience within the automotive aftermarket segment",
+  //     "Advanced the B2C and B2B operational performance with distributor and retail clients in achieving double-digit growth year on year",
+  //     "Extensive experience in factory operation processes and product development",
+  //     "Holder of a Mechanical Engineering BSc"
+  //   ]
+  // },
+  // { 
+  //   name: "Sameem Sayed", 
+  //   title: "Group Human Capital Director", 
+  //   image: "https://automillennium.com/wp-content/uploads/2022/02/Sameem-01-3.png",
+  //   link :"sameem-sayed",
+  //   description: [
+  //     "Led and managed positions as HR Business Partner and Director Human Capital for over 18 years with international experience in Human Resources Management, Organizational Development, HR Business Partnering and Talent Development",
+  //     "Exposure to diverse sectors and leading companies across the Middle East (primarily UAE) and Europe"
+  //   ]
+  // },
 ];
 
 export default executives;
