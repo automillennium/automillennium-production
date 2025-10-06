@@ -127,11 +127,11 @@ const Page = () => {
         </div>
 
         {/* Services Section */}
-        <section className="py-20 px-10 max-w-[1200px] mx-auto">
-          <h1 className="fade-scroll text-white text-center text-[34px] py-10">
+        <section className="py-20 px-10 max-w-[1800px] mx-auto">
+          <h1 className="fade-scroll text-white text-center text-[34px] ">
             Our Services
           </h1>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-1 text-white">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mt-1 text-white">
             {[
               {
                 title: "Paint Protection Film (PPF)",
@@ -174,21 +174,28 @@ const Page = () => {
                 ],
               },
             ].map((service, i) => (
+
+<div className="flex flex-col pt-20 flex-wrap">
+<div className="h-[300px] w-full bg-white rounded-t-2xl">
+
+</div>
+
    <div
     key={i}
     // Added 'text-left' to the container and removed 'list-inside' 
     // to ensure the bullet points start right at the edge of the padding.
-    className="service-item p-6 bg-neutral-900 rounded-lg shadow-lg fade-scroll text-left"
+    className="service-item p-6 bg-neutral-900 rounded-lg shadow-lg fade-scroll text-left h-[230px] rounded-b-2xl"
 >
     <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
     
     {/* Use 'list-disc' and 'pl-5' for margin, which often creates better alignment */}
-    <ul className="list-disc text-gray-300 pl-5"> 
+    <ul className="list-disc text-gray-300 pl-5 text-sm "> 
         {service.items.map((item, j) => (
-            <li key={j}>{item}</li>
+          <li key={j}>{item}</li>
         ))}
     </ul>
 </div>
+        </div>
             ))}
           </div>
         </section>
