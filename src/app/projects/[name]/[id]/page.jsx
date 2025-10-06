@@ -1,18 +1,31 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { sliderData } from "../../projectsData";
 import { motion } from "framer-motion";
 
 export default function ProjectPage() {
-  const params = useParams(); // { slug }
+  const params = useParams(); // { slug, model? }
+  console.log('params: ', params);
   const projectSlug = params.name;
+  
+  const modelSlug = params.id;
+  console.log('modelSlug: ', modelSlug);
 
   const project = sliderData.find((p) => p.slug === projectSlug);
-  const [activeModel, setActiveModel] = useState(0);
-
   if (!project) return <div className="text-white p-4">Project not found</div>;
+
+  // Determine the initial active model based on URL param
+  const initialModelIndex = modelSlug
+    ? project.models.findIndex((m) => m.slug === modelSlug)
+    : 0;
+
+  const [activeModel, setActiveModel] = useState(
+    initialModelIndex >= 0 ? initialModelIndex : 0
+  );
+
+
 
   const model = project.models[activeModel];
 
@@ -76,33 +89,32 @@ export default function ProjectPage() {
         {project.title} - {model.name} Gallery
       </motion.h1>
 
-      {/* Model Navigation */}
-      {project.models.length > 1 && (
-        <div className="flex justify-center mb-12 gap-4 flex-wrap">
-          {project.models.map((m, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveModel(idx)}
-              className={`px-4 py-2 rounded-md font-medium ${
-                idx === activeModel
-                  ? "bg-white text-black"
-                  : "bg-gray-700 text-white hover:bg-gray-600"
-              }`}
-            >
-              {m.name}
-            </button>
-          ))}
-        </div>
-      )}
+{/* Model Navigation */}
+{project.models.length > 1 && (
+  <div className="flex justify-center mb-12 gap-4 flex-wrap">
+    {project.models.map((m) => (
+      <button
+        key={m.slug} // use slug as key
+        onClick={() => setActiveModel(project.models.indexOf(m))}
+        className={`px-4 py-2 rounded-md font-medium ${
+          m === project.models[activeModel]
+            ? "bg-white text-black"
+            : "bg-gray-700 text-white hover:bg-gray-600"
+        }`}
+      >
+        {m.name}
+      </button>
+    ))}
+  </div>
+)}
 
-      {/* Interior Gallery (first row visible on load) */}
-      {renderGallery("Interior", model.interior, true)}
+{/* Gallery Sections */}
+<div key={activeModel}> {/* <-- important: forces re-render when activeModel changes */}
+  {renderGallery("Interior", model.interior, true)}
+  {renderGallery("Exterior", model.exterior)}
+  {renderGallery("Gallery", model.gallery)}
+</div>
 
-      {/* Exterior Gallery (fade in on scroll) */}
-      {renderGallery("Exterior", model.exterior)}
-
-      {/* General Gallery (fade in on scroll) */}
-      {renderGallery("Gallery", model.gallery)}
     </div>
   );
 }

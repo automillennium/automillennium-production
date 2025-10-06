@@ -37,7 +37,7 @@ export default function ProjectPage() {
     if (idx !== activeModel) {
       setActiveModel(idx);
     } else {
-      const dynamicRoute = `/projects/${project.slug}/${project.models[idx].slug}`;
+      const dynamicRoute = `/projects/${project.slug}/${project.models[idx]?.slug}`;
       router.push(dynamicRoute);
     }
   };
