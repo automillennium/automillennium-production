@@ -127,18 +127,14 @@ useGSAP(() => {
       <div className="relative mb-8 flex flex-col items-center gap-3 pt-36">
         {/* Logo with fade-in animation */}
         <img
-          src="/img/global-white.png"
+          src="/img/lusso-logo.webp"
           alt="VTX Logo"
           className="page-logo h-[300px] w-[400px] object-contain"
         />
 
         <div className="text-center text-white text-[20px] pb-10 max-w-[800px]">
-          <p className="page-logo">
-Visit our Car Care Clinic today!
-Our services include, window tinting, interior & exterior detailing,
-paint protection film, ceramic coating, rust-proofing, water printing,
-vinyl wrapping, etc. using the best quality products
-          </p>
+          <p className="page-logo ">
+A Leading Global Luxury Mobility Solutions Provider, Lusso Offers A One-Stop Solution Across The Entire Automotive Spectrum - From Vehicle Transformation And Mass Customization To Premium Bespoke Luxury And Service.          </p>
         </div>
       </div>
 
@@ -197,7 +193,7 @@ vinyl wrapping, etc. using the best quality products
               type="video/webm" 
             />
             <source 
-              src="https://automillennium.com/wp-content/uploads/2022/02/Autoclinic_Web_Video.mp4" 
+              src="/videos/losso.mp4" 
               type="video/mp4" 
             />
             {/* Fallback for very old browsers */}
