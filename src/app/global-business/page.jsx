@@ -184,7 +184,6 @@ A Leading Global Luxury Mobility Solutions Provider, Lusso Offers A One-Stop Sol
             muted
             playsInline
             preload="metadata" // Changed from "auto" to "metadata"
-            poster="/img/video-poster.jpg"
             className="absolute left-0 top-0 w-full h-full object-cover object-center"
           >
             {/* Add multiple sources for better browser compatibility */}

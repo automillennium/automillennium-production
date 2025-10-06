@@ -84,7 +84,7 @@ const Hero = () => {
       >
         <video
           ref={videoRef}
-          src="https://automillennium.com/wp-content/uploads/2025/07/amg-video-1920x1080-1.mp4"
+          src="/videos/amg-video.mp4"
           autoPlay
           loop
           muted
