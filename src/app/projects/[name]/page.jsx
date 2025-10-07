@@ -139,10 +139,9 @@ export default function ProjectPage() {
           <button
             onClick={prevModel}
             disabled={activeModel === 0}
-            className="z-20 bg-white/30 w-10 h-10 rounded-full text-xl text-white hover:bg-white hover:text-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="z-20 bg-white/30 w-10 h-10 rounded-full text-xl text-white hover:bg-white hover:text-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center"
           >
-            &lt;
-          </button>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-left-icon lucide-chevrons-left"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg>          </button>
 
           <div
             ref={modelRef}
@@ -173,10 +172,9 @@ export default function ProjectPage() {
           <button
             onClick={nextModel}
             disabled={activeModel === project.models.length - 1}
-            className="z-20 bg-white/30 w-10 h-10 rounded-full text-xl text-white hover:bg-white hover:text-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="z-20 bg-white/30 w-10 h-10 rounded-full text-xl text-white hover:bg-white hover:text-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center"
           >
-            &gt;
-          </button>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-right-icon lucide-chevrons-right"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>          </button>
         </div>
       </div>
     </div>

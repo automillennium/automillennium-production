@@ -108,11 +108,11 @@ function EventsPage() {
         
         {/* === Header Section (Clean and Bold) === */}
         <div className="text-center mb-20 mt-10">
-          <h1 className="text-white text-6xl md:text-8xl font-extrabold tracking-tight mb-4 leading-none">
+          <h1 className="text-white text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-none">
             Events
           </h1>
           
-          <Separator className="w-20 h-1 bg-zinc-700/50 mx-auto my-10 rounded-full" /> 
+          <Separator className="w-20 h-1 bg-zinc-700/50 mx-auto my-5 rounded-full" /> 
           
           <p className="text-gray-400 text-xl md:text-2xl max-w-3xl mx-auto">
             Discover upcoming **exclusive experiences** and moments crafted for the LUSSO community worldwide.

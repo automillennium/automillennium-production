@@ -139,11 +139,12 @@ const Page = () => {
             Our Protection Services
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mt-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mt-10 justify-center">
            {[
               {
                 title: "Paint Protection Film (PPF)",
                 imagePlaceholder: "bg-cyan-500/20",
+                videoUrl:"/videos/TINT.mp4",
                 items: [
                   "Invisible shield against chips, scratches, and debris.",
                   "High gloss finish & Self-healing technology.",
@@ -153,6 +154,8 @@ const Page = () => {
               {
                 title: "Ceramic Coating",
                 imagePlaceholder: "bg-blue-500/20",
+                                videoUrl:"/videos/TINT.mp4",
+
                 items: [
                   "Long-lasting hydrophobic protective layer.",
                   "Maximum UV resistance & deep gloss shine.",
@@ -162,6 +165,8 @@ const Page = () => {
               {
                 title: "Window Tinting",
                 imagePlaceholder: "bg-indigo-500/20",
+                                videoUrl:"/videos/TINT.mp4",
+
                 items: [
                   "Superior heat rejection for cabin comfort.",
                   "Full UV protection for occupants.",
@@ -171,6 +176,8 @@ const Page = () => {
               {
                 title: "Interior & Exterior Detailing",
                 imagePlaceholder: "bg-violet-500/20",
+                                videoUrl:"/videos/TINT.mp4",
+
                 items: [
                   "Deep cleaning and material restoration.",
                   "Leather, fabric, and dashboard long-term protection.",
@@ -180,6 +187,8 @@ const Page = () => {
               {
                 title: "Tailored Protection (Custom Packages)",
                 imagePlaceholder: "bg-purple-500/20",
+                                videoUrl:"/videos/TINT.mp4",
+
                 items: [
                   "Protection packages customized for your vehicle's needs.",
                   "Combine PPF, coating, tinting & detailing for total coverage.",
@@ -189,13 +198,23 @@ const Page = () => {
             ].map((service, i) => (
               <div key={i} className="flex flex-col fade-scroll group w-[300px]">
                 {/* Placeholder Image/Icon Area (Apple-style visual element) */}
-                <div className={`h-40 ${service.imagePlaceholder} rounded-t-3xl border border-zinc-700 flex items-center justify-center`}>
-                    <svg className="w-12 h-12 text-white/50 group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.417a11.95 11.95 0 010 17.834C17.618 20.957 14.906 22 12 22s-5.618-1.043-7.618-3.166a11.95 11.95 0 010-17.834C6.382 3.043 9.094 2 12 2s5.618 1.043 7.618 3.166z"></path></svg>
-                </div>
+      <div className={`h-[300px] ${service.imagePlaceholder} rounded-t-3xl border border-zinc-700 flex items-center justify-center overflow-hidden`}>
+  <video
+    src={service?.videoUrl}
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-full object-cover"
+  >
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 
                 {/* Service Details Card */}
                 <div
-                  className="service-item p-6 bg-zinc-900 border border-zinc-800 rounded-b-3xl shadow-xl transition duration-300 group-hover:shadow-cyan-500/20 group-hover:bg-zinc-800/80 h-full"
+                  className="service-item p-6 bg-zinc-900 border border-zinc-800 rounded-b-3xl shadow-xl transition duration-300 group-hover:shadow-cyan-500/20 group-hover:bg-zinc-800/80 h-[260px]"
                 >
                   <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
                   

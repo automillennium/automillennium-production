@@ -305,7 +305,7 @@ useGSAP(() => {
         </h3>
 
         <p class="text-lg text-gray-300 mb-8">
-          Our team under the Auto Millennium Group umbrella brings together expertise in Automotive Detailing, Bodywork, Quality Control, and Customer Service. This enables us to take on large-scale projects, serving multiple dealerships simultaneously with speed and consistency.
+          Our team under the Auto Millennium Group umbrella brings together expertise in Automotive Detailing, Bodywork, Quality Control, and Customer Service. This enables us to take on large-scale projects, serving multiple dealerships simultaneously with speed and consistencywithout ever compromising on quality.
         </p>
 
         <div class="flex flex-wrap gap-2">

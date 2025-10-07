@@ -109,7 +109,7 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import executives from "../team";
+import executivesNew from "../team";
 // Assuming 'executives' is correctly imported from "../team"
 // import executives from "../team"; 
 
@@ -129,7 +129,7 @@ const BioText = ({ children, index }) => (
 
 const ExecutiveProfile = () => {
   const params = useParams();
-  const exec = executives.find((e) => e.link === params.id);
+  const exec = executivesNew.find((e) => e.link === params.id);
 
   if (!exec) {
     return (
