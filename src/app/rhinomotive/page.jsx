@@ -582,12 +582,12 @@ const Page = () => {
       {/* === Hero/Intro Section (Beautified) === */}
       <div id="about" className="min-h-screen w-screen bg-black">
         <div className="relative flex flex-col items-center pt-40 pb-20 px-4 md:px-8">
-          
+
           {/* Logo */}
           <img 
             src="/img/rhino-white.png" 
             alt="RHINOMOTIVE Logo" 
-            className="page-intro-element h-[300px] w-[400px] object-contain" 
+            className="page-intro-element  h-[150px] w-[200px] lg:h-[300px] lg:w-[400px] object-contain" 
           />
 
           {/* Title and Intro Text */}

@@ -123,19 +123,26 @@ useGSAP(() => {
 });
   return (
     <div id="about" className="min-h-screen w-screen bg-black">
-      <div className="relative mb-8 flex flex-col items-center gap-3 pt-36">
-        {/* Logo with fade-in animation */}
+      {/* Revised Hero Section for Apple-like Alignment and Sizing */}
+      <div className="relative mb-0 flex flex-col items-center gap-4 pt-48 pb-20"> {/* Increased padding, reduced margin */}
+        
+        {/* Logo with fade-in animation - Made significantly smaller */}
         <img
           src="/img/rox-white.png"
           alt="VTX Logo"
-          className="page-logo h-[300px] w-[400px] object-contain"
+          // Reduced size of the logo for a more elegant, subtle presentation
+            className="page-logo  h-[150px] w-[200px] lg:h-[300px] lg:w-[400px] object-contain" 
         />
 
-        <div className="text-center text-white text-[20px] pb-10 max-w-[800px]">
-          <p className="page-logo">
-   Fix accessories not fixed by the manufacturer such as wireless chargers,
-parking sensors, rear entertainment systems, etc.
-for added value and comfort
+
+
+        {/* Descriptive Text - Smaller, Thinner, and more spaced out */}
+        <div className="text-center text-white text-2xl font-light leading-snug pb-10 max-w-[600px] px-4">
+            <p className="page-logo text-gray-300 text-xl md:text-2xl max-w-4xl mx-auto">
+             {/* Thinner font and slightly smaller size */}
+             Fix accessories not fixed by the manufacturer such as wireless chargers,
+             parking sensors, rear entertainment systems, etc.
+             for added value and comfort.
           </p>
         </div>
       </div>

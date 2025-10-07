@@ -88,15 +88,15 @@ const Page = () => {
           <img
             src="/img/vtx-white.png"
             alt="VTX Logo"
-            className="page-intro-element h-[300px] w-[400px] object-contain"
+            className="page-logo  h-[150px] w-[200px] lg:h-[300px] lg:w-[400px] object-contain" 
           />
 
           {/* Title and Intro Text */}
           <div className="text-center max-w-5xl mx-auto mt-10">
-            <h1 className="page-intro-element text-white text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+            <h1 className="page-logo text-white text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
               Premium Protection. Advanced Technology.
             </h1>
-            <p className="page-intro-element text-gray-300 text-xl md:text-2xl max-w-4xl mx-auto">
+            <p className="page-logo text-gray-300 text-xl md:text-2xl max-w-4xl mx-auto">
               **VTX** is Auto Millennium’s premium line of vehicle protection solutions,
               designed to keep your car looking brand-new while safeguarding it from
               harsh weather, road debris, and everyday wear. Our products combine
@@ -144,7 +144,7 @@ const Page = () => {
               {
                 title: "Paint Protection Film (PPF)",
                 imagePlaceholder: "bg-cyan-500/20",
-                videoUrl:"/videos/TINT.mp4",
+                videoUrl:"/videos/PPF.mp4",
                 items: [
                   "Invisible shield against chips, scratches, and debris.",
                   "High gloss finish & Self-healing technology.",

@@ -128,10 +128,10 @@ useGSAP(() => {
         <img
           src="/img/autocare-white.png"
           alt="VTX Logo"
-          className="page-logo h-[300px] w-[400px] object-contain"
+            className="page-logo h-[150px] w-[200px] lg:h-[300px] lg:w-[400px] object-contain" 
         />
 
-<section class="py-24 px-4 md:px-8 text-center bg-black">
+<section class="page-logo py-24 px-4 md:px-8 text-center bg-black">
     <div class="max-w-4xl mx-auto">
         <h1 class="text-white text-5xl md:text-7xl font-extrabold tracking-tight mb-4 leading-snug">
             Welcome to <span class="text-cyan-400">Auto Care 360</span>

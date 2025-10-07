@@ -360,7 +360,7 @@ const Page = () => {
           <img
             src="/img/lusso-logo.webp"
             alt="Lusso Logo"
-            className="page-logo h-[300px] w-[400px] object-contain"
+            className="page-logo  h-[150px] w-[200px] lg:h-[300px] lg:w-[400px] object-contain" 
           />
 
           <div className="text-center max-w-5xl mx-auto mt-10">
