@@ -108,56 +108,81 @@
 
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
-// Register the ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
-  // Use useGSAP for GSAP logic tied to the component
+  const videoRef = useRef(null);
+  const [loadVideo, setLoadVideo] = useState(false);
+
   useGSAP(() => {
-    // 1. Initial state (gsap.set) for the 'video-frame' element
+    // Initial clipPath
     gsap.set("#video-frame", {
       clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
       borderRadius: "0% 0% 40% 10%",
     });
 
-    // 2. Scroll-driven animation (gsap.from) to change its properties
+    // Animate clipPath on scroll
     gsap.from("#video-frame", {
-      // Animate *from* a rectangular shape and no border radius
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       borderRadius: "0% 0% 0% 0%",
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: "#video-frame",
-        start: "center center", // Start the animation when the center of the frame hits the center of the viewport
-        end: "bottom center",   // End the animation when the bottom of the frame hits the center of the viewport
-        scrub: true,            // Link the animation progress to the scroll position
+        start: "center center",
+        end: "bottom center",
+        scrub: true,
       },
     });
   }, []);
 
+  // Intersection Observer → load video only when visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setLoadVideo(true);
+            observer.disconnect(); // Load only once
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    if (videoRef.current) observer.observe(videoRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    
     <div className="relative h-dvh w-screen overflow-x-hidden">
-      {/* The video frame element is what the GSAP animation targets.
-        It uses the initial state set by gsap.set and animates *from* the
-        gsap.from properties *to* the set properties as the user scrolls.
-      */}
       <div
         id="video-frame"
-        className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
+        ref={videoRef}
+        className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-black"
       >
-        <video
-          src="/videos/amg-video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute left-0 top-0 w-full h-full object-cover object-center"
-        />
+        {loadVideo ? (
+          <video
+            src="/videos/amg-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute left-0 top-0 w-full h-full object-cover object-center"
+          />
+        ) : (
+          // Show poster while video hasn't loaded
+          <img
+            src="/img/banner-img.png"
+            alt="Loading video..."
+            className="absolute left-0 top-0 w-full h-full object-cover object-center"
+          />
+        )}
 
         <div className="absolute left-0 top-0 z-40 w-full h-full">
           {/* Overlay content goes here */}
