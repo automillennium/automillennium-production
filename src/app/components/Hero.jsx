@@ -150,14 +150,23 @@ const Hero = () => {
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
       >
-        <video
+        {/* <video
           src="/videos/amg-video.mp4"
           autoPlay
           loop
           muted
           playsInline
           className="absolute left-0 top-0 w-full h-full object-cover object-center"
-        />
+        /> */}
+
+
+                <iframe
+  src="https://iframe.videodelivery.net/5d5bc37ffcf54c9b82e996823bffbb81?autoplay=true&muted=true&loop=true&controls=false"
+  className="absolute left-0 top-0 w-full h-full object-cover object-center"
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+  allowFullScreen
+  frameBorder="0"
+/>
 
         <div className="absolute left-0 top-0 z-40 w-full h-full">
           {/* Overlay content goes here */}
@@ -167,4 +176,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;  
+export default Hero;
