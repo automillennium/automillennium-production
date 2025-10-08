@@ -1,10 +1,12 @@
+
 "use client";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+// Removed motion and AnimatePresence imports as they are no longer needed
+// import { motion, AnimatePresence } from "framer-motion";
 
 import AnimatedTitle from "../components/AnimatedTitle";
 
@@ -264,68 +266,62 @@ useGSAP(() => {
         </div>
       </div>
 
+// This assumes 'projectBrandsCategories' is an array of objects, 
+// where each object contains a 'links' array.
 
+{/* --- Apple-Style Premium Featured Projects Section --- */}
+<section className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Apple Heading: Large, thin, crisp, high-contrast. */}
+    <h2 className="text-5xl sm:text-7xl font-normal text-white mb-20 text-center tracking-tighter leading-none">
+      Discover Our Featured Work
+    </h2>
 
-      <div className="flex justify-center items-center">
-
-                      <AnimatePresence>
-                        {
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.25 }}
-                            className="
-       pt-[80px] h-screen bg-white/5 backdrop-blur-xl z-[99999] overflow-hidden w-full
-                              before:content-[''] before:absolute before:inset-0
-                              before:from-black before:to-transparent before:bg-gradient-to-b
-                              before:pointer-events-none
-                            "
-                      
-                          >
-                            <motion.div
-                              initial={{ opacity: 0, y: -10 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, y: -10 }}
-                              transition={{ duration: 0.25, delay: 0.05 }}
-                              className="relative w-full max-w-[980px] mx-auto bg-black shadow-xl rounded-b-lg p-8"
-                              style={{ borderRadius: "0 0 12px 12px" }}
-                            >
-                              <div className="grid grid-cols-4 gap-6">
-                                {/* Note: The original had 3 categories and 4 columns, which is fine, 
-                                    but consider if you want this to change on smaller desktop/tablet sizes.
-                                    For simplicity, I've kept it as-is for the desktop mega menu. */}
-                                {projectBrandsCategories.map(
-                                  (categoryData, catIndex) => (
-                                    <div
-                                      key={catIndex}
-                                      className="flex flex-col gap-2"
-                                    >
-                                      <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                                        {categoryData.category}
-                                      </h3>
-                                      <div className="flex flex-col gap-1">
-                                        {categoryData.links.map(
-                                          (link, linkIndex) => (
-                                            <a
-                                              href={link.link}
-                                              key={linkIndex}
-                                              className="block text-lg font-medium py-1 -mx-2 px-2 rounded-md transition-colors text-white hover:text-black hover:bg-gray-100 cursor-pointer"
-                                            >
-                                              {link.name}
-                                            </a>
-                                          )
-                                        )}
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                            </motion.div>
-                          </motion.div>
-                        }
-                      </AnimatePresence>
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projectBrandsCategories.map(
+        (categoryData, catIndex) => (
+          <div
+            key={catIndex}
+            // Premium Card Style: Deep, dark background with subtle transparency (simulating "Glass") 
+            // and a smooth, highly rounded border.
+            className="p-6 bg-gray-900/70 backdrop-blur-md rounded-3xl shadow-2xl transition-all duration-300 ease-in-out hover:bg-gray-800/80 border border-gray-800"
+          >
+            <div className="flex flex-col">
+              {categoryData.links.map(
+                (link, linkIndex) => (
+                  <a
+                    href={link.link}
+                    key={linkIndex}
+                    // Premium Link Style: Taller, full-width, subtle divider, and clean hover.
+                    className={`
+                      group block w-full text-xl font-medium py-4 px-3 transition-colors duration-200 ease-in-out
+                      text-white/85 hover:text-white hover:bg-white/5 rounded-xl
+                      focus:outline-none focus:ring-2 focus:ring-blue-500/50
+                      ${
+                        // Subtle list item divider, only visible on the dark background.
+                        linkIndex < categoryData.links.length - 1 
+                          ? 'mb-1' // Add a small margin gap instead of a full line divider
+                          : ''
+                      }
+                    `}
+                  >
+                    {link.name}
+                    {/* Subtle Chevron Icon on the right (iOS-style) */}
+                    <span className="float-right text-white/40 group-hover:text-white/70 transition-transform duration-200 ease-in-out group-hover:translate-x-1">
+                        &rsaquo;
+                    </span>
+                  </a>
+                )
+              )}
+            </div>
+          </div>
+        )
+      )}
+    </div>
+  </div>
+</section>
+{/* ------------------------------------------------------------------- */}
     </div>
   );
 };

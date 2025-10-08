@@ -154,7 +154,7 @@ const Page = () => {
               {
                 title: "Ceramic Coating",
                 imagePlaceholder: "bg-blue-500/20",
-                                videoUrl:"/videos/TINT.mp4",
+                                videoUrl:"/videos/CERAMIC.mp4",
 
                 items: [
                   "Long-lasting hydrophobic protective layer.",
