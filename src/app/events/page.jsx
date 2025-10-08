@@ -104,8 +104,19 @@ function EventsPage() {
 
   return (
     <div className="bg-black py-24">
+
+<div className="w-full h-[100vh] bg-black">
+  <video
+    src="/videos/PPF.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="w-full h-full object-cover"
+  />
+</div>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
         {/* === Header Section (Clean and Bold) === */}
         <div className="text-center mb-20 mt-10">
           <h1 className="text-white text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-none">
@@ -118,6 +129,8 @@ function EventsPage() {
             Discover upcoming **exclusive experiences** and moments crafted for the LUSSO community worldwide.
           </p>
         </div>
+
+
 
         {/* === Event Cards Grid (Dark Mode Premium Look) === */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">

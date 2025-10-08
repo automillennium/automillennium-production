@@ -703,7 +703,7 @@ const NavBar = () => {
               {/* First group (Retail and VTX) */}
               <div className="flex justify-center items-center gap-[35px]">
                   <div className="flex flex-col justify-center items-center gap-2">
-                        <a  href="/vtx" className="nav-hover-btn">
+                        <a  href="/vtx" className="nav-section">
                           Retail
                         </a>
                         <Separator orientation={"horizontal"} className="h-[0.5px] w-10 bg-gray-400"/>
@@ -714,7 +714,7 @@ const NavBar = () => {
 
                   {/* Second group (OMV Section and navItems) */}
                   <div className="flex flex-col justify-center items-center gap-2">
-                        <span className="nav-hover-btn">
+                        <span className="nav-section">
                           OMV Section
                         </span>
                         <Separator orientation={"horizontal"} className="h-[0.5px] w-[400px] bg-gray-400"/>
