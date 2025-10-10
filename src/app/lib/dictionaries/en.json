@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "business": "Our Business",
+    "features": "Features",
+    "story": "Our Story",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Your Company Name",
+    "subtitle": "Primary Tagline & Main Service",
+    "cta": "Get Started"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Your compelling business description..."
+  },
+  "business": {
+    "title": "Our Business",
+    "description": "Details about your business..."
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  },
+
+    "globalBusiness": {
+    "title": "Global Luxury Mobility Solutions",
+    "description": "LUSSO offers a one-stop solution across the entire automotive spectrum—from Vehicle Transformation and mass customization to premium Bespoke Luxury and service.",
+    "logoAlt": "Lusso Logo",
+    "loadingText": "Loading experience...",
+    "videoErrorTitle": "Video Failed to Load",
+    "videoErrorText": "There was a problem loading the video content.",
+    "retryButton": "Retry Loading",
+    "browserSupport": "Your browser doesn't support HTML5 video.",
+    "storyTitle": "OUR STORY",
+    "story1": "LUSSO DESIGNS INDIA PVT LTD is a leading global luxury mobility solutions provider specializing in vehicle transformation and customization. Lusso offers a one – stop solution across the entire automotive spectrum - from vehicle transformation and mass customization to premium bespoke luxury and services that exemplify excellence and sophistication.",
+    "story2": "As a leading multinational corporation in the field of vehicle transformation, with over 500,000 delighted customers across India, the Middle East, and Western Europe—and a legacy of more than 50 years—we continue to redefine innovation, craftsmanship, and mobility.",
+    "philosophyTitle": "PHILOSOPHY",
+    "philosophy": "At LUSSO DESIGNS, we redefine luxury through precision, innovation, and artistry. Each creation reflects individuality, blending cutting-edge technology with timeless elegance. Driven by a passion for craftsmanship—our state-of-the-art design studios, led by seasoned designers and supported by masterful craftsmen—ensure every creation reflects precision, passion, and innovation. For us, luxury is more than design; it is an experience of timeless elegance."
+  }
+}

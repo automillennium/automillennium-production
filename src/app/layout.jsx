@@ -66,7 +66,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html className="scroll-smooth">
       <head>
         {/* Preload critical resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -83,22 +83,7 @@ export default function RootLayout({ children }) {
       </head>
       
       <body className="antialiased">
-        {/* Skip to main content for accessibility */}
-        <a 
-          href="#main-content" 
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50"
-        >
-          Skip to main content
-        </a>
-
-        <NavBar />
-        
-        <main id="main-content" role="main">
-          {children}
-        </main>
-        
-        <Footer />
-        <WhatsappWidget />
+        {children}
       </body>
     </html>
   );

@@ -8,7 +8,7 @@ import { useState, useEffect, useRef } from "react";
 // Removed motion and AnimatePresence imports as they are no longer needed
 // import { motion, AnimatePresence } from "framer-motion";
 
-import AnimatedTitle from "../components/AnimatedTitle";
+// import AnimatedTitle from "../components/AnimatedTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -189,6 +189,8 @@ useGSAP(() => {
              parking sensors, rear entertainment systems, etc.
              for added value and comfort.
           </p>
+
+
         </div>
       </div>
 
