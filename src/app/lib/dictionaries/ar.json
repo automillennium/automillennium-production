@@ -1,12 +1,44 @@
  {
-  "nav": {
-    "home": "الرئيسية",
-    "about": "من نحن",
-    "business": "أعمالنا",
-    "features": "الميزات",
-    "story": "قصتنا",
-    "contact": "اتصل بنا"
-  },
+"nav": {
+    "retail_section": "تجزئة",
+    "omv_section": "حلول OMV",
+    "company_section": "الشركة",
+    "car_brands": "ماركات السيارات",
+    "events": "الفعاليات",
+    "our_teams": "فريقنا",
+    "language": "اللغة",
+    "luxury_brands": "ماركات فاخرة",
+    "premium_brands": "ماركات مميزة",
+    "volume_brands": "ماركات شائعة",
+    "projects": {
+      "rolls_royce": "رولز رويس",
+      "bentley": "بينتلي",
+      "mclaren": "مكلارين",
+      "aston_martin": "أستون مارتن",
+      "porsche": "بورشه",
+      "mercedes": "مرسيدس",
+      "land_rover": "لاند روفر",
+      "alfa_romeo": "ألفا روميو",
+      "hummer": "همر",
+      "tesla": "تسلا",
+      "ineos": "إينيوس",
+      "corvette": "كورفيت",
+      "lexus": "لكزس",
+      "genesis": "جينيسيس",
+      "kia": "كيا",
+      "hyundai": "هيونداي",
+      "mg": "إم جي",
+      "toyota": "تويوتا",
+      "nissan": "نيسان",
+      "ford": "فورد",
+      "jeep": "جيب"
+    },
+    "rox": "روكس",
+    "vtx": "في تي إكس",
+    "autocare": "أوتو كير 360",
+    "rhinomotive": "راينو موتف"
+  }
+,
   "hero": {
     "title": "اسم شركتك",
     "subtitle": "الشعار الرئيسي والخدمة الأساسية",

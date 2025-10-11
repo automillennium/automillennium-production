@@ -1,12 +1,45 @@
 {
   "nav": {
-    "home": "Home",
-    "about": "About",
-    "business": "Our Business",
-    "features": "Features",
-    "story": "Our Story",
-    "contact": "Contact"
-  },
+    "retail_section": "Retail",
+    "omv_section": "OMV Solutions",
+    "company_section": "Company",
+    "car_brands": "Car Brands",
+    "events": "Events",
+    "our_teams": "Our Teams",
+    "language": "Language",
+    "luxury_brands": "Luxury Brands",
+    "premium_brands": "Premium Brands",
+    "volume_brands": "Volume Brands",
+    "projects": {
+      "rolls_royce": "Rolls Royce",
+      "bentley": "Bentley",
+      "mclaren": "Mclaren",
+      "aston_martin": "Aston Martin",
+      "porsche": "Porsche",
+      "mercedes": "Mercedes",
+      "land_rover": "Land Rover",
+      "alfa_romeo": "Alfa Romeo",
+      "hummer": "Hummer",
+      "tesla": "Tesla",
+      "ineos": "Ineos",
+      "corvette": "Corvette",
+      "lexus": "Lexus",
+      "genesis": "Genesis",
+      "kia": "Kia",
+      "hyundai": "Hyundai",
+      "mg": "MG",
+      "toyota": "Toyota",
+      "nissan": "Nissan",
+      "ford": "Ford",
+      "jeep": "Jeep"
+    },
+    "rox": "ROX",
+    "vtx": "VTX",
+    "autocare": "AutoCare 360",
+    "rhinomotive": "RhinoMotive"
+}
+
+,
   "hero": {
     "title": "Your Company Name",
     "subtitle": "Primary Tagline & Main Service",

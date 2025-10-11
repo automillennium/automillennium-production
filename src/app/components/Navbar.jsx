@@ -1,500 +1,3 @@
-// // 'use client'; is needed for hooks like useState, useEffect, useWindowScroll, etc.
-// "use client"; 
-
-// import clsx from "clsx";
-// import gsap from "gsap";
-// import Link from "next/link"; 
-// import { useWindowScroll } from "react-use";
-// import { useEffect, useRef, useState, useMemo } from "react";
-// import { Separator } from "./ui/Separator"; 
-// import { motion, AnimatePresence } from "framer-motion";
-// // IMPORT THE GLOBE ICON
-// import { Menu, X, ChevronRight, Globe } from "lucide-react"; 
-
-// // Import the new Language Dropdown for desktop
-// import LanguageDropdown from './LanguageSwitcher'; 
-
-// // --- Data Definitions (Keeping the structured data) ---
-
-// const projectBrandsCategories = [
-//   // ... (projectBrandsCategories content remains unchanged)
-//   {
-//     category: "Luxury Brands",
-//     links: [
-//       { name: "Rolls Royce", link: "/projects/rolls-royce" },
-//       { name: "Bentley", link: "/projects/bentley" },
-//       { name: "Mclaren", link: "/projects/mclaren" },
-//       { name: "Aston Martin", link: "/projects/aston-martin" },
-//       { name: "Porsche", link: "/projects/porsche" },
-//       { name: "Mercedes", link: "/projects/mercedes" },
-//       { name: "Land Rover", link: "/projects/land-rover" },
-//     ],
-//   },
-//   {
-//     category: "Premium Brands",
-//     links: [
-//       { name: "Alfa Romeo", link: "/projects/alfa-romeo" },
-//       { name: "Hummer", link: "/projects/hummer" },
-//       { name: "Tesla", link: "/projects/tesla" },
-//       { name: "Ineos", link: "/projects/ineos" },
-//       { name: "Corvette", link: "/projects/corvette" },
-//       { name: "Lexus", link: "/projects/lexus" },
-//       { name: "Genesis", link: "/projects/genesis" },
-//     ],
-//   },
-//   {
-//     category: "Volume Brands",
-//     links: [
-//       { name: "Kia", link: "/projects/kia" },
-//       { name: "Hyundai", link: "/projects/hyundai" },
-//       { name: "Mg", link: "/projects/mg" },
-//       { name: "Toyota", link: "/projects/toyota" },
-//       { name: "Nissan", link: "/projects/nis`san" },
-//       { name: "Ford", link: "/projects/ford" },
-//       { name: "Jeep", link: "/projects/jeep" },
-//     ],
-//   },
-// ];
-
-// const getAllCarBrandLinks = () => {
-//   return projectBrandsCategories.flatMap(category => category.links);
-// };
-// const allCarBrandLinks = getAllCarBrandLinks();
-
-
-// // --- MobileMenu Component (Using Globe Icon for language link) ---
-
-// const MobileMenu = ({ isOpen, onClose, dictionary, lang }) => {
-//   const [openMobileProjects, setOpenMobileProjects] = useState(false);
-
-//   // Define mobile navigation using the dictionary for translations
-//   const mobileGroups = useMemo(() => [
-//     {
-//       title: dictionary.retail_section || "Retail",
-//       isGroup: true,
-//       items: [
-//         { name: "VTX", link: `/${lang}/vtx` },
-//       ],
-//     },
-//     {
-//       title: dictionary.omv_section || "OMV Section",
-//       isGroup: true,
-//       items: [
-//         { name: "ROX", link: `/${lang}/rox` },
-//         { name: "AutoCare 360", link: `/${lang}/autocare` },
-//         { name: "RhinoMotive", link: `/${lang}/rhinomotive` },
-//         { name: "Global Business", link: `/${lang}/global-business` },
-//       ],
-//     },
-//     {
-//       title: dictionary.company_section || "Company",
-//       isGroup: false,
-//       items: [
-//         { name: dictionary.car_brands || "Car Brands", link: `/${lang}/projects`, dropdown: true }, 
-//         { name: dictionary.events || "Events", link: `/${lang}/events` },
-//         { name: dictionary.our_teams || "Our Teams", link: `/${lang}/our-teams` },
-//       ],
-//     },
-//     {
-//       title: dictionary.general_links || "General",
-//       isGroup: false,
-//       items: [
-//         { name: dictionary.home || "Home", href: `/${lang}` },
-//         { name: dictionary.about || "About", href: `/${lang}/about` },
-//         { name: dictionary.business || "Business", href: `/${lang}/#business` },
-//         { name: dictionary.features || "Features", href: `/${lang}/#features` },
-//         { name: dictionary.story || "Story", href: `/${lang}/#story` },
-//         { name: dictionary.contact || "Contact", href: `/${lang}/#contact` },
-//         // Language Link in mobile menu (flat link, not a complex dropdown)
-//         { name: `${dictionary.language || "Language"} (${lang.toUpperCase()})`, href: lang === 'en' ? `/ar` : `/en`, icon: Globe }, 
-//       ],
-//     }
-//   ], [dictionary, lang]);
-
-
-//   const DROPDOWN_ITEM_NAME = dictionary.car_brands || "Car Brands";
-//   const linkClassName = "block text-3xl font-semibold text-white py-3 px-2 -mx-2 hover:text-gray-300 transition";
-//   const subLinkClassName = "block text-xl font-medium text-gray-300 py-2 px-2 -mx-2 hover:text-white transition";
-
-
-//   return (
-//     <AnimatePresence>
-//       {isOpen && (
-//         <>
-//           {/* Backdrop */}
-//           <motion.div
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             exit={{ opacity: 0 }}
-//             className="fixed inset-0 bg-black/70 z-[9999]"
-//             onClick={onClose}
-//           />
-//           {/* Menu Panel */}
-//           <motion.div
-//             initial={{ x: lang === 'ar' ? "-100%" : "100%" }}
-//             animate={{ x: 0 }}
-//             exit={{ x: lang === 'ar' ? "-100%" : "100%" }}
-//             transition={{ type: "tween", duration: 0.35 }}
-//             className={clsx(
-//                 "fixed top-0 h-full w-full max-w-md bg-black/80 backdrop-blur-xl shadow-2xl z-[10000] p-6 overflow-y-auto",
-//                 lang === 'ar' ? "left-0 text-right" : "right-0 text-left"
-//             )}
-//             dir={lang === 'ar' ? 'rtl' : 'ltr'}
-//           >
-//             <div className={clsx("flex items-center mb-8", lang === 'ar' ? "justify-start" : "justify-end")}>
-//               <button onClick={onClose} className="p-2 rounded-full text-white transition hover:bg-white/10">
-//                 <X size={32} />
-//               </button>
-//             </div>
-
-//             <nav className="flex flex-col">
-//               {mobileGroups.map((group, groupIndex) => (
-//                 <div key={groupIndex} className="mb-2">
-                  
-//                   {group.isGroup && (
-//                     <div className="py-4 border-b border-white/20">
-//                       <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
-//                         {group.title}
-//                       </h3>
-//                     </div>
-//                   )}
-
-//                   <div className="flex flex-col">
-//                     {group.items.map((item, itemIndex) => {
-
-//                        // Special logic for the dropdown item ("Car Brands")
-//                        if (item.name === DROPDOWN_ITEM_NAME) {
-//                           // ... (Car Brands Dropdown rendering logic remains the same)
-//                           return (
-//                              <div key={`${groupIndex}-${itemIndex}`}>
-//                                 <button
-//                                    onClick={() => setOpenMobileProjects(!openMobileProjects)}
-//                                    className={clsx(
-//                                      "w-full text-left flex justify-between items-center",
-//                                      linkClassName
-//                                    )}
-//                                    style={{ direction: 'ltr' }} 
-//                                 >
-//                                    <span>{item.name}</span>
-//                                    <ChevronRight size={24} className={clsx("transition-transform duration-300", { "rotate-90": openMobileProjects })} />
-//                                 </button>
-//                                 <Separator orientation="horizontal" className="h-[1px] bg-white/10" />
-
-//                                 <AnimatePresence>
-//                                    {openMobileProjects && (
-//                                       <motion.div
-//                                          initial={{ height: 0, opacity: 0 }}
-//                                          animate={{ height: "auto", opacity: 1 }}
-//                                          exit={{ height: 0, opacity: 0 }}
-//                                          transition={{ duration: 0.3 }}
-//                                          className="overflow-hidden"
-//                                       >
-//                                          <div className="flex flex-col pt-2 pl-4">
-//                                             {allCarBrandLinks.map((link, linkIndex) => (
-//                                                    <div key={linkIndex}>
-//                                                     <Link href={link.link} className={subLinkClassName} onClick={onClose}>
-//                                                        {link.name}
-//                                                     </Link>
-//                                                      <Separator orientation="horizontal" className="h-[1px] bg-white/10" />
-//                                                   </div>
-//                                                )
-//                                             )}
-//                                          </div>
-//                                       </motion.div>
-//                                    )}
-//                                 </AnimatePresence>
-//                              </div>
-//                           );
-//                        }
-
-//                        // Default link rendering
-//                        const IconComponent = item.icon;
-//                        return (
-//                           <div key={`${groupIndex}-${itemIndex}`}>
-//                             <Link 
-//                                href={item.link || item.href} 
-//                                className={clsx(linkClassName, "flex items-center justify-between")} 
-//                                onClick={onClose}
-//                             >
-//                                {item.name}
-//                                {IconComponent && <IconComponent size={24} className="text-gray-400" />}
-//                             </Link>
-//                             <Separator orientation="horizontal" className="h-[1px] bg-white/10" />
-//                           </div>
-//                        );
-//                     })}
-//                   </div>
-//                 </div>
-//               ))}
-//             </nav>
-//           </motion.div>
-//         </>
-//       )}
-//     </AnimatePresence>
-//   );
-// };
-
-
-// // --- NavBar Component (Apple Style, Integrated LanguageDropdown) ---
-// export default function NavBar({ dictionary, lang }) {
-//   const [isNavVisible, setIsNavVisible] = useState(true);
-//   const [lastScrollY, setLastScrollY] = useState(0);
-//   const [openDropdown, setOpenDropdown] = useState(false);
-//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
-
-//   const navContainerRef = useRef(null);
-//   const { y: currentScrollY } = useWindowScroll();
-
-//   // Desktop Nav Items based on i18n (logic remains the same)
-//   const desktopNavItems = useMemo(() => ([
-//     { name: "ROX", link: `/${lang}/rox` },
-//     { name: "AutoCare 360", link: `/${lang}/autocare` },
-//     { name: "RhinoMotive", link: `/${lang}/rhinomotive` },
-//     { name: "Global Business", link: `/${lang}/global-business` },
-//   ]), [lang]);
-
-//   const desktopNavItemsTwo = useMemo(() => ([
-//     { name: dictionary.car_brands || "Car Brands", link: `/${lang}/projects`, dropdown: true },
-//     { name: dictionary.events || "Events", link: `/${lang}/events` },
-//     { name: dictionary.our_teams || "Our Teams", link: `/${lang}/our-teams` },
-//   ]), [dictionary, lang]);
-
-
-//   // Scroll and GSAP logic remains the same...
-//   useEffect(() => {
-//     // ... (Scroll logic)
-//     if (currentScrollY === 0) {
-//       setIsNavVisible(true);
-//       navContainerRef.current?.classList.remove("floating-nav");
-//     } else if (currentScrollY > lastScrollY) {
-//       setIsNavVisible(false);
-//       navContainerRef.current?.classList.add("floating-nav"); 
-//     } else if (currentScrollY < lastScrollY) {
-//       setIsNavVisible(true);
-//       navContainerRef.current?.classList.add("floating-nav");
-//     }
-//     setLastScrollY(currentScrollY);
-//   }, [currentScrollY, lastScrollY]);
-
-//   useEffect(() => {
-//     // ... (GSAP animation logic)
-//     gsap.to(navContainerRef.current, {
-//       y: isNavVisible ? 0 : -100,
-//       opacity: isNavVisible ? 1 : 0,
-//       duration: 0.2,
-//       onComplete: () => {
-//           if (!isNavVisible) {
-//               navContainerRef.current.style.pointerEvents = 'none';
-//           }
-//       },
-//       onStart: () => {
-//           if (isNavVisible) {
-//               navContainerRef.current.style.pointerEvents = 'auto';
-//           }
-//       }
-//     });
-//   }, [isNavVisible]);
-
-//   useEffect(() => {
-//     // ... (Prevent scroll logic)
-//     if (isMobileMenuOpen) {
-//       document.body.style.overflow = 'hidden';
-//     } else {
-//       document.body.style.overflow = 'unset';
-//     }
-//     return () => {
-//       document.body.style.overflow = 'unset';
-//     };
-//   }, [isMobileMenuOpen]);
-
-
-//   return (
-//     <>
-//       <div
-//         ref={navContainerRef}
-//         className="fixed inset-x-6 top-4 z-[9999] border-none transition-all duration-700 px-2 md:px-6 h-[45px] md:h-[70px]"
-//         dir={lang === 'ar' ? 'rtl' : 'ltr'}
-//       >
-//         <header className="absolute top-1/2 w-full -translate-y-1/2">
-//           <nav className="flex size-full items-center justify-between p-4 !font-apple relative">
-            
-//             {/* Logo */}
-//             <div 
-//                 className={clsx(
-//                     "flex items-center gap-7 absolute top-1/2 -translate-y-1/2",
-//                     lang === 'ar' ? 'right-4 sm:right-20' : 'left-4 sm:left-20'
-//                 )}
-//             >
-//               <Link href={`/${lang}`}>
-//                 <img src="/img/amg-new-logo.png" alt="logo" className="w-24 sm:w-44" /> 
-//               </Link>
-//             </div>
-
-//             {/* Desktop Nav Items */}
-//             <div className="hidden md:flex h-full items-center justify-center gap-[35px] mx-auto text-white">
-              
-//               {/* First, Second, Third groups (Content remains the same) */}
-//               {/* ... (Your three navigation link groups) ... */}
-              
-//               {/* First group (Retail and VTX) */}
-//               <div className="flex flex-col justify-center items-center gap-2">
-//                     <Link  href={`/${lang}/vtx`} className="nav-section">
-//                       {dictionary.retail_section || "Retail"}
-//                     </Link>
-//                     <Separator orientation={"horizontal"} className="h-[0.5px] w-10 bg-gray-400"/>
-//                     <Link  href={`/${lang}/vtx`} className="nav-hover-btn">
-//                       VTX
-//                     </Link>
-//               </div>
-
-//               {/* Separator between groups 1 and 2 */}
-//               <Separator orientation="vertical" className="h-6 w-[0.5px] bg-gray-400"/>
-
-
-//               {/* Second group (OMV Section and navItems) */}
-//               <div className="flex flex-col justify-center items-center gap-2">
-//                     <span className="nav-section">
-//                       {dictionary.omv_section || "OMV Section"}
-//                     </span>
-//                     <Separator orientation={"horizontal"} className="h-[0.5px] w-full bg-gray-400"/>
-//                     <div className="flex  justify-center items-center gap-[35px]">
-//                       {desktopNavItems.map((item, index) => (
-//                         <Link key={index} href={item.link} className="nav-hover-btn">
-//                           {item.name}
-//                         </Link>
-//                       ))}
-//                     </div>
-//               </div>
-
-//               {/* Separator between groups 2 and 3 */}
-//               <Separator orientation="vertical" className="h-6 w-[0.5px] bg-gray-400"/>
-
-//               {/* Third group (Company Section - navItemsTwo) */}
-//               <div className="flex justify-center items-center gap-[35px] relative">
-//                 {desktopNavItemsTwo.map((item, index) => (
-//                   <div
-//                     key={index}
-//                     className="relative"
-//                     onMouseEnter={() => item.dropdown && setOpenDropdown(true)}
-//                     onMouseLeave={() => item.dropdown && setOpenDropdown(false)}
-//                   >
-//                     {item.dropdown ? (
-//                       <span className="nav-hover-btn cursor-pointer">
-//                         {item.name}
-//                       </span>
-//                     ) : (
-//                       <Link href={item.link} className="nav-hover-btn">
-//                         {item.name}
-//                       </Link>
-//                     )}
-
-//                     {/* Mega Menu Overlay (logic remains the same) */}
-//                     {item.dropdown && (
-//                       <AnimatePresence>
-//                        {/* ... (Mega Menu rendering logic remains the same) */}
-//                         {openDropdown && (
-//                           <motion.div
-//                             initial={{ opacity: 0 }}
-//                             animate={{ opacity: 1 }}
-//                             exit={{ opacity: 0 }}
-//                             transition={{ duration: 0.25 }}
-//                             className="fixed inset-x-0 top-0 pt-[80px] h-screen bg-white/5 backdrop-blur-xl z-[99999] overflow-hidden w-full before:content-[''] before:absolute before:inset-0 before:from-black/70 before:to-transparent before:bg-gradient-to-b before:pointer-events-none"
-//                             style={{
-//                               top: `${navContainerRef.current ? navContainerRef.current.offsetHeight + 10 : 0}px`,
-//                               height: `calc(100vh - ${navContainerRef.current ? navContainerRef.current.offsetHeight + 10 : 0}px)`,
-//                             }}
-//                             onClick={() => {
-//                               setOpenDropdown(false);
-//                             }}
-//                           >
-//                             <motion.div
-//                               initial={{ opacity: 0, y: -10 }}
-//                               animate={{ opacity: 1, y: 0 }}
-//                               exit={{ opacity: 0, y: -10 }}
-//                               transition={{ duration: 0.25, delay: 0.05 }}
-//                               className="relative w-full max-w-[980px] mx-auto bg-black shadow-xl rounded-b-lg p-8"
-//                               style={{ borderRadius: "0 0 12px 12px" }}
-//                             >
-//                               <div className="grid grid-cols-3 gap-6"> 
-//                                 {projectBrandsCategories.map(
-//                                   (categoryData, catIndex) => (
-//                                     <div
-//                                       key={catIndex}
-//                                       className="flex flex-col gap-2"
-//                                     >
-//                                       <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
-//                                          {categoryData.category}
-//                                        </h3>
-//                                       <div className="flex flex-col gap-1">
-//                                         {categoryData.links.map(
-//                                           (link, linkIndex) => (
-//                                             <Link
-//                                               href={link.link}
-//                                               key={linkIndex}
-//                                               className="block text-lg font-medium py-1 -mx-2 px-2 rounded-md transition-colors text-white hover:text-black hover:bg-gray-100 cursor-pointer"
-//                                             >
-//                                               {link.name}
-//                                             </Link>
-//                                           )
-//                                         )}
-//                                       </div>
-//                                     </div>
-//                                   )
-//                                 )}
-//                               </div>
-//                             </motion.div>
-//                           </motion.div>
-//                         )}
-//                       </AnimatePresence>
-//                     )}
-//                   </div>
-//                 ))}
-//               </div>
-//             </div>
-            
-//             {/* Language Switcher (Desktop) - NOW USES LanguageDropdown */}
-//             <div 
-//                 className={clsx(
-//                     "hidden md:block absolute top-1/2 -translate-y-1/2",
-//                     lang === 'ar' ? 'left-4 sm:left-20' : 'right-4 sm:right-20'
-//                 )}
-//             >
-//                 <LanguageDropdown currentLang={lang} />
-//             </div>
-
-//             {/* Hamburger Menu Icon (Visible on small screens) */}
-//             <div 
-//                 className={clsx(
-//                     "flex md:hidden absolute top-1/2 -translate-y-1/2",
-//                     lang === 'ar' ? 'left-4' : 'right-4'
-//                 )}
-//             >
-//                 <button 
-//                     onClick={() => setIsMobileMenuOpen(true)}
-//                     className="p-2 rounded-full text-white transition"
-//                 >
-//                     <Menu size={28} />
-//                 </button>
-//             </div>
-
-//           </nav>
-//         </header>
-//       </div>
-//       {/* Mobile Menu Component (Pass i18n props) */}
-//       <MobileMenu 
-//         isOpen={isMobileMenuOpen} 
-//         onClose={() => setIsMobileMenuOpen(false)} 
-//         dictionary={dictionary}
-//         lang={lang}
-//       />
-//     </>
-//   );
-// }
-
-
-
-// 'use client'; is needed for hooks like useState, useEffect, useWindowScroll, etc.
-
 
 
 "use client"; 
@@ -536,7 +39,7 @@ const projectBrandsCategories = [
       { name: "Tesla", link: "/projects/tesla" },
       { name: "Ineos", link: "/projects/ineos" },
       { name: "Corvette", link: "/projects/corvette" },
-      { name: "Lexus", link: "/projects/lexus" },
+      { name: "Lexus", link: "/projects/lexus" }, 
       { name: "Genesis", link: "/projects/genesis" },
     ],
   },
@@ -565,49 +68,39 @@ const allCarBrandLinks = getAllCarBrandLinks();
 const MobileMenu = ({ isOpen, onClose, dictionary, lang }) => {
   const [openMobileProjects, setOpenMobileProjects] = useState(false);
 
-  // Define mobile navigation using the dictionary for translations
-  const mobileGroups = useMemo(() => [
-    {
-      title: dictionary.retail_section || "Retail",
-      isGroup: true,
-      items: [
-        { name: "VTX", link: `/${lang}/vtx` },
-      ],
-    },
-    {
-      title: dictionary.omv_section || "OMV Solutions",
-      isGroup: true,
-      items: [
-        { name: "ROX", link: `/${lang}/rox` },
-        { name: "AutoCare 360", link: `/${lang}/autocare` },
-        { name: "RhinoMotive", link: `/${lang}/rhinomotive` },
-        { name: "Global Business", link: `/${lang}/global-business` },
-      ],
-    },
-    {
-      title: dictionary.company_section || "Company",
-      isGroup: false,
-      items: [
-        { name: dictionary.car_brands || "Car Brands", link: `/${lang}/projects`, dropdown: true }, 
-        { name: dictionary.events || "Events", link: `/${lang}/events` },
-        { name: dictionary.our_teams || "Our Teams", link: `/${lang}/our-teams` },
-      ],
-    },
-    {
-      title: dictionary.general_links || "General",
-      isGroup: false,
-      items: [
-        { name: dictionary.home || "Home", href: `/${lang}` },
-        { name: dictionary.about || "About", href: `/${lang}/about` },
-        { name: dictionary.business || "Business", href: `/${lang}/#business` },
-        { name: dictionary.features || "Features", href: `/${lang}/#features` },
-        { name: dictionary.story || "Story", href: `/${lang}/#story` },
-        { name: dictionary.contact || "Contact", href: `/${lang}/#contact` },
-        // Language Link in mobile menu (flat link, not a complex dropdown)
-        { name: `${dictionary.language || "Language"} (${lang.toUpperCase()})`, href: lang === 'en' ? `/ar` : `/en`, icon: Globe }, 
-      ],
-    }
-  ], [dictionary, lang]);
+const mobileGroups = useMemo(() => [
+  {
+    title: dictionary.retail_section || "Retail",
+    isGroup: true,
+    items: [
+      { name:dictionary.rox || "ROX", link: `/${lang}/rox` },
+    ],
+  },
+  {
+    title: dictionary.omv_section || "OMV Solutions",
+    isGroup: true,
+    items: [
+      { name: dictionary.vtx || "VTX", link: `/${lang}/vtx` },
+      { name: dictionary.autocare || "AutoCare 360", link: `/${lang}/autocare` },
+      { name: dictionary.rhinomotive || "RhinoMotive", link: `/${lang}/rhinomotive` },
+      { name: dictionary.car_brands || "Global Business", link: `/${lang}/global-business` },
+    ],
+  },
+  {
+    title: dictionary.company_section || "Company",
+    isGroup: false,
+    items: [
+      { name: dictionary.car_brands || "Car Brands", link: `/${lang}/projects`, dropdown: true },
+      { name: dictionary.events || "Events", link: `/${lang}/events` },
+      { name: dictionary.our_teams || "Our Teams", link: `/${lang}/our-teams` },
+      { 
+        name: `${dictionary.language || "Language"} (${lang.toUpperCase()})`, 
+        href: lang === 'en' ? `/ar` : `/en`, 
+        icon: Globe 
+      },
+    ],
+  },
+], [dictionary, lang]);
 
 
   const DROPDOWN_ITEM_NAME = dictionary.car_brands || "Car Brands";
@@ -749,22 +242,22 @@ export default function NavBar({ dictionary, lang }) {
 
   // Desktop Nav Items based on i18n (logic remains the same)
   // Re-define for clarity and easy use in the new structure
-  const retailSubItems = useMemo(() => ([
-      { name: "VTX", link: `/${lang}/vtx` },
-  ]), [lang]);
+const retailSubItems = useMemo(() => [
+      { name:dictionary.rox || "ROX", link: `/${lang}/rox` },
+], [lang]);
 
-  const omvSubItems = useMemo(() => ([
-      { name: "ROX", link: `/${lang}/rox` },
-      { name: "AutoCare 360", link: `/${lang}/autocare` },
-      { name: "RhinoMotive", link: `/${lang}/rhinomotive` },
-      { name: "Global Business", link: `/${lang}/global-business` },
-  ]), [lang]);
-  
-  const companyNavItems = useMemo(() => ([
-    { name: dictionary.car_brands || "Car Brands", link: `/${lang}/projects`, dropdown: true },
-    { name: dictionary.events || "Events", link: `/${lang}/events` },
-    { name: dictionary.our_teams || "Our Teams", link: `/${lang}/our-teams` },
-  ]), [dictionary, lang]);
+const omvSubItems = useMemo(() => [
+  { name: dictionary.vtx || "VTX", link: `/${lang}/vtx` },
+  { name: dictionary.autocare || "AutoCare 360", link: `/${lang}/autocare` },
+  { name: dictionary.rhinomotive || "RhinoMotive", link: `/${lang}/rhinomotive` },
+  { name: dictionary.car_brands || "Global Business", link: `/${lang}/global-business` },
+], [dictionary, lang]);
+
+const companyNavItems = useMemo(() => [
+  { name: dictionary.car_brands || "Car Brands", link: `/${lang}/projects`, dropdown: true },
+  { name: dictionary.events || "Events", link: `/${lang}/events` },
+  { name: dictionary.our_teams || "Our Teams", link: `/${lang}/our-teams` },
+], [dictionary, lang]);
 
 
   // Scroll and GSAP logic remains the same...
@@ -971,14 +464,12 @@ export default function NavBar({ dictionary, lang }) {
                                       key={catIndex}
                                       className="flex flex-col gap-2"
                                     >
-                                      <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                                         {categoryData.category}
-                                       </h3>
+                  
                                       <div className="flex flex-col gap-1">
                                         {categoryData.links.map(
                                           (link, linkIndex) => (
                                             <Link
-                                              href={link.link}
+href={`/${lang}/${link.link}`}
                                               key={linkIndex}
                                               className="block text-lg font-medium py-1 -mx-2 px-2 rounded-md transition-colors text-white hover:text-black hover:bg-gray-100 cursor-pointer"
                                             >
