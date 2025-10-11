@@ -18,44 +18,44 @@ import LanguageDropdown from './LanguageSwitcher';
 // --- Data Definitions (Keeping the structured data) ---
 
 const projectBrandsCategories = [
-  // ... (projectBrandsCategories content remains unchanged)
   {
     category: "Luxury Brands",
     links: [
-      { name: "Rolls Royce", link: "/projects/rolls-royce" },
-      { name: "Bentley", link: "/projects/bentley" },
-      { name: "Mclaren", link: "/projects/mclaren" },
-      { name: "Aston Martin", link: "/projects/aston-martin" },
-      { name: "Porsche", link: "/projects/porsche" },
-      { name: "Mercedes", link: "/projects/mercedes" },
-      { name: "Land Rover", link: "/projects/land-rover" },
+      { nameEN: "Rolls Royce", nameAR: "رولز رويس", link: "/projects/rolls-royce" },
+      { nameEN: "Bentley", nameAR: "بنتلي", link: "/projects/bentley" },
+      { nameEN: "Mclaren", nameAR: "ماكلارين", link: "/projects/mclaren" },
+      { nameEN: "Aston Martin", nameAR: "أستون مارتن", link: "/projects/aston-martin" },
+      { nameEN: "Porsche", nameAR: "بورشه", link: "/projects/porsche" },
+      { nameEN: "Mercedes", nameAR: "مرسيدس", link: "/projects/mercedes" },
+      { nameEN: "Land Rover", nameAR: "لاند روفر", link: "/projects/land-rover" },
     ],
   },
   {
     category: "Premium Brands",
     links: [
-      { name: "Alfa Romeo", link: "/projects/alfa-romeo" },
-      { name: "Hummer", link: "/projects/hummer" },
-      { name: "Tesla", link: "/projects/tesla" },
-      { name: "Ineos", link: "/projects/ineos" },
-      { name: "Corvette", link: "/projects/corvette" },
-      { name: "Lexus", link: "/projects/lexus" }, 
-      { name: "Genesis", link: "/projects/genesis" },
+      { nameEN: "Alfa Romeo", nameAR: "ألفا روميو", link: "/projects/alfa-romeo" },
+      { nameEN: "Hummer", nameAR: "همر", link: "/projects/hummer" },
+      { nameEN: "Tesla", nameAR: "تسلا", link: "/projects/tesla" },
+      { nameEN: "Ineos", nameAR: "اينيوس", link: "/projects/ineos" },
+      { nameEN: "Corvette", nameAR: "كورفيت", link: "/projects/corvette" },
+      { nameEN: "Lexus", nameAR: "لكزس", link: "/projects/lexus" },
+      { nameEN: "Genesis", nameAR: "جينيسيس", link: "/projects/genesis" },
     ],
   },
   {
     category: "Volume Brands",
     links: [
-      { name: "Kia", link: "/projects/kia" },
-      { name: "Hyundai", link: "/projects/hyundai" },
-      { name: "Mg", link: "/projects/mg" },
-      { name: "Toyota", link: "/projects/toyota" },
-      { name: "Nissan", link: "/projects/nis`san" },
-      { name: "Ford", link: "/projects/ford" },
-      { name: "Jeep", link: "/projects/jeep" },
+      { nameEN: "Kia", nameAR: "كيا", link: "/projects/kia" },
+      { nameEN: "Hyundai", nameAR: "هيونداي", link: "/projects/hyundai" },
+      { nameEN: "Mg", nameAR: "إم جي", link: "/projects/mg" },
+      { nameEN: "Toyota", nameAR: "تويوتا", link: "/projects/toyota" },
+      { nameEN: "Nissan", nameAR: "نيسان", link: "/projects/nissan" },
+      { nameEN: "Ford", nameAR: "فورد", link: "/projects/ford" },
+      { nameEN: "Jeep", nameAR: "جيب", link: "/projects/jeep" },
     ],
   },
 ];
+
 
 const getAllCarBrandLinks = () => {
   return projectBrandsCategories.flatMap(category => category.links);
@@ -184,7 +184,7 @@ const mobileGroups = useMemo(() => [
                                             {allCarBrandLinks.map((link, linkIndex) => (
                                                    <div key={linkIndex}>
                                                     <Link href={link.link} className={subLinkClassName} onClick={onClose}>
-                                                       {link.name}
+                                                       {lang === "en" ? link?.nameEN : link?.nameAR}
                                                     </Link>
                                                      <Separator orientation="horizontal" className="h-[1px] bg-white/10" />
                                                   </div>
@@ -473,7 +473,7 @@ href={`/${lang}/${link.link}`}
                                               key={linkIndex}
                                               className="block text-lg font-medium py-1 -mx-2 px-2 rounded-md transition-colors text-white hover:text-black hover:bg-gray-100 cursor-pointer"
                                             >
-                                              {link.name}
+                                                       {lang === "en" ? link?.nameEN : link?.nameAR}
                                             </Link>
                                           )
                                         )}
