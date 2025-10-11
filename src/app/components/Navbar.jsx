@@ -90,9 +90,9 @@ const mobileGroups = useMemo(() => [
     title: dictionary.company_section || "Company",
     isGroup: false,
     items: [
-      { name: dictionary.car_brands || "Car Brands", link: `/${lang}/projects`, dropdown: true },
+      { name: dictionary.car_brands || "Bespoke Projects", link: `/${lang}/projects`, dropdown: true },
       { name: dictionary.events || "Events", link: `/${lang}/events` },
-      { name: dictionary.our_teams || "Our Teams", link: `/${lang}/our-teams` },
+      { name: dictionary.our_teams || "Meet the Family", link: `/${lang}/our-teams` },
       { 
         name: `${dictionary.language || "Language"} (${lang.toUpperCase()})`, 
         href: lang === 'en' ? `/ar` : `/en`, 
@@ -254,9 +254,9 @@ const omvSubItems = useMemo(() => [
 ], [dictionary, lang]);
 
 const companyNavItems = useMemo(() => [
-  { name: dictionary.car_brands || "Car Brands", link: `/${lang}/projects`, dropdown: true },
+  { name: dictionary.car_brands || "Bespoke Projects", link: `/${lang}/projects`, dropdown: true },
   { name: dictionary.events || "Events", link: `/${lang}/events` },
-  { name: dictionary.our_teams || "Our Teams", link: `/${lang}/our-teams` },
+  { name: dictionary.our_teams || "Meet the Family", link: `/${lang}/our-teams` },
 ], [dictionary, lang]);
 
 
