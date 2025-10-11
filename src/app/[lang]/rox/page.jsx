@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useState, useEffect, useRef } from "react";
+import EmblaCarousel from "@/app/components/EmblaCarousal";
 // Removed motion and AnimatePresence imports as they are no longer needed
 // import { motion, AnimatePresence } from "framer-motion";
 
@@ -106,6 +107,8 @@ const projectBrandsCategories = [
       { name: "Aston Martin", link: "/projects/aston-martin" },
       { name: "Porsche", link: "/projects/porsche" },
       { name: "Mercedes", link: "/projects/mercedes" },
+            { name: "Jeep", link: "/projects/jeep" },
+
     ],
   },
   {
@@ -130,7 +133,6 @@ const projectBrandsCategories = [
       { name: "Toyota", link: "/projects/toyota" },
       { name: "Nissan", link: "/projects/nissan" },
       { name: "Ford", link: "/projects/ford" },
-      { name: "Jeep", link: "/projects/jeep" },
     ],
   },
 ];
@@ -166,6 +168,10 @@ useGSAP(() => {
   // Call ScrollTrigger.refresh() on render
   ScrollTrigger.refresh(true);
 });
+
+const OPTIONS = { loop: true  }
+const SLIDES = ["/videos/PPF.mp4","/videos/PPF.mp4","/videos/PPF.mp4","/videos/PPF.mp4","/videos/PPF.mp4","/videos/PPF.mp4"]
+
   return (
     <div id="about" className="min-h-screen w-screen bg-black">
       {/* Revised Hero Section for Apple-like Alignment and Sizing */}
@@ -268,8 +274,56 @@ useGSAP(() => {
         </div>
       </div>
 
-// This assumes 'projectBrandsCategories' is an array of objects, 
-// where each object contains a 'links' array.
+
+
+<section className="py-32 px-4 sm:px-6 lg:px-8 bg-black"> {/* True black background like Apple */}
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Apple-style typography: Ultra-thin, tight tracking, perfect hierarchy */}
+    <h2 className="text-5xl sm:text-7xl lg:text-8xl font-thin text-white mb-20 text-center tracking-tight leading-[1.1]">
+      Explore Our Innovations
+    </h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projectBrandsCategories.map((categoryData, catIndex) => (
+        <div
+          key={catIndex}
+          // Apple card aesthetic: Subtle dark gradient, perfect border, refined shadows
+          className="p-6 bg-gradient-to-b from-[#1D1D1F] to-[#0F0F0F] rounded-3xl border border-[#2C2C2E] shadow-lg hover:shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] hover:translate-y-[-4px]"
+        >
+          <div className="flex flex-col">
+            {categoryData.links.map((link, linkIndex) => (
+              <a
+                href={link.link}
+                key={linkIndex}
+                // Apple link styling: Perfect spacing, subtle interactions, premium feel
+                className={`
+                  group relative flex items-center justify-between w-full text-[17px] font-light py-5 px-4
+                  text-white/90 hover:text-white transition-all duration-300 ease-out
+                  ${linkIndex > 0 ? 'border-t border-white/[0.08]' : ''}
+                  hover:bg-white/[0.05] rounded-xl
+                `}
+              >
+                {/* Apple-style text with perfect kerning */}
+                <span className="tracking-tight">{link.name}</span>
+                
+                {/* Apple chevron - subtle but precise */}
+                <span className="text-white/50 group-hover:text-white/80 text-lg font-light transition-all duration-300 ease-out group-hover:translate-x-0.5">
+                  ›
+                </span>
+                
+                {/* Subtle hover background effect */}
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+{/* ------------------------------------------------------------------- */}
+
 
 {/* --- Apple-Style Premium Featured Projects Section --- */}
 <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
@@ -277,53 +331,17 @@ useGSAP(() => {
     
     {/* Apple Heading: Large, thin, crisp, high-contrast. */}
     <h2 className="text-5xl sm:text-7xl font-normal text-white mb-20 text-center tracking-tighter leading-none">
-      Discover Our Featured Work
+      From Vision to Reality
     </h2>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projectBrandsCategories.map(
-        (categoryData, catIndex) => (
-          <div
-            key={catIndex}
-            // Premium Card Style: Deep, dark background with subtle transparency (simulating "Glass") 
-            // and a smooth, highly rounded border.
-            className="p-6 bg-gray-900/70 backdrop-blur-md rounded-3xl shadow-2xl transition-all duration-300 ease-in-out hover:bg-gray-800/80 border border-gray-800"
-          >
-            <div className="flex flex-col">
-              {categoryData.links.map(
-                (link, linkIndex) => (
-                  <a
-                    href={link.link}
-                    key={linkIndex}
-                    // Premium Link Style: Taller, full-width, subtle divider, and clean hover.
-                    className={`
-                      group block w-full text-xl font-medium py-4 px-3 transition-colors duration-200 ease-in-out
-                      text-white/85 hover:text-white hover:bg-white/5 rounded-xl
-                      focus:outline-none focus:ring-2 focus:ring-blue-500/50
-                      ${
-                        // Subtle list item divider, only visible on the dark background.
-                        linkIndex < categoryData.links.length - 1 
-                          ? 'mb-1' // Add a small margin gap instead of a full line divider
-                          : ''
-                      }
-                    `}
-                  >
-                    {link.name}
-                    {/* Subtle Chevron Icon on the right (iOS-style) */}
-                    <span className="float-right text-white/40 group-hover:text-white/70 transition-transform duration-200 ease-in-out group-hover:translate-x-1">
-                        &rsaquo;
-                    </span>
-                  </a>
-                )
-              )}
-            </div>
-          </div>
-        )
-      )}
-    </div>
+
+
+
+    <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+
+
   </div>
 </section>
-{/* ------------------------------------------------------------------- */}
     </div>
   );
 };
