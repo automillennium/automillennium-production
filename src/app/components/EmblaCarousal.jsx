@@ -5,7 +5,7 @@ import {
   NextButton,
   PrevButton,
   usePrevNextButtons
-} from './EmblaCarousalArrowBurron'
+} from './EmblaCarousalArrowButton'
 
 const EmblaCarousel = (props) => {
   const { slides, options } = props
@@ -94,6 +94,8 @@ const EmblaCarousel = (props) => {
             disabled={prevBtnDisabled}
           />
           <NextButton
+
+        
             onClick={() => onButtonAutoplayClick(onNextButtonClick)}
             disabled={nextBtnDisabled}
           />
