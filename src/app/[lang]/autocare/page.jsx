@@ -167,7 +167,7 @@ const Page = () => {
 
         {/* Services Section */}
         <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-          <h2 className="fade-in-text text-white text-4xl md:text-6xl font-bold text-center mb-16">
+            <h2 className="fade-scroll text-white text-center text-5xl md:text-[56px] leading-[1.0714285714] font-semibold tracking-[-0.005em] font-sans  mb-16">
             Our Services
           </h2>
 

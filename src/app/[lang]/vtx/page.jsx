@@ -262,7 +262,7 @@ const Page = () => {
           {/* === Services Section === */}
           <section className="py-24 px-4 md:px-8 max-w-[90%] mx-auto">
             {/* The Section Header is tagged */}
-            <h2 className="fade-scroll text-white text-center text-5xl md:text-6xl font-bold mb-16">
+            <h2 className="fade-scroll text-white text-center text-5xl md:text-[56px] leading-[1.0714285714] font-semibold tracking-[-0.005em] font-sans  mb-16">
               Our Protection Services
             </h2>
             
@@ -289,7 +289,7 @@ const Page = () => {
                 <div
                   className="service-item p-6 bg-zinc-900 border border-zinc-800 rounded-b-3xl shadow-xl transition duration-300 group-hover:shadow-cyan-500/20 group-hover:bg-zinc-800/80 min-h-[240px]"
                 >
-                  <h3 className="text-xl font-bold text-white mb-3 fade-scroll">{service.title}</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3 fade-scroll">{service.title}</h3>
                   
                   {/* List items are tagged */}
                   <ul className="list-disc text-gray-400 pl-5 text-sm space-y-1"> 
