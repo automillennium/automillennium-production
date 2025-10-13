@@ -16,9 +16,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-export default function ProjectPage() {
-  const params = useParams();
-  const projectSlug = params.name;
+export default function ProjectPage({params}) {
+    const { lang } = params;
+    console.log('lang: ', lang);
+
+  const paramsSlug = useParams();
+  const projectSlug = paramsSlug.name;
   const router = useRouter();
 
   const project = sliderData.find((p) => p.slug === projectSlug);
@@ -37,7 +40,7 @@ export default function ProjectPage() {
     if (idx !== activeModel) {
       setActiveModel(idx);
     } else {
-      const dynamicRoute = `/projects/${project.slug}/${project.models[idx]?.slug}`;
+      const dynamicRoute = `/${lang}/projects/${project.slug}/${project.models[idx]?.slug}`;
       router.push(dynamicRoute);
     }
   };

@@ -83,7 +83,7 @@ const mobileGroups = useMemo(() => [
       { name: dictionary.vtx || "VTX", link: `/${lang}/vtx` },
       { name: dictionary.autocare || "AutoCare 360", link: `/${lang}/autocare` },
       { name: dictionary.rhinomotive || "RhinoMotive", link: `/${lang}/rhinomotive` },
-      { name: dictionary.car_brands || "Global Business", link: `/${lang}/global-business` },
+      { name: dictionary.global_business || "Global Business", link: `/${lang}/global-business` },
     ],
   },
   {
@@ -93,11 +93,11 @@ const mobileGroups = useMemo(() => [
       { name: dictionary.car_brands || "Bespoke Projects", link: `/${lang}/projects`, dropdown: true },
       { name: dictionary.events || "Events", link: `/${lang}/events` },
       { name: dictionary.our_teams || "Meet the Family", link: `/${lang}/our-teams` },
-      { 
-        name: `${dictionary.language || "Language"} (${lang.toUpperCase()})`, 
-        href: lang === 'en' ? `/ar` : `/en`, 
-        icon: Globe 
-      },
+      // { 
+      //   name: `${dictionary.language || "Language"} (${lang.toUpperCase()})`, 
+      //   href: lang === 'en' ? `/ar` : `/en`, 
+      //   icon: Globe 
+      // },
     ],
   },
 ], [dictionary, lang]);
@@ -183,7 +183,8 @@ const mobileGroups = useMemo(() => [
                                          <div className="flex flex-col pt-2 pl-4">
                                             {allCarBrandLinks.map((link, linkIndex) => (
                                                    <div key={linkIndex}>
-                                                    <Link href={link.link} className={subLinkClassName} onClick={onClose}>
+                                                    <Link href={`/${lang}/${link.link}`}
+ className={subLinkClassName} onClick={onClose}>
                                                        {lang === "en" ? link?.nameEN : link?.nameAR}
                                                     </Link>
                                                      <Separator orientation="horizontal" className="h-[1px] bg-white/10" />
@@ -217,6 +218,9 @@ const mobileGroups = useMemo(() => [
                   </div>
                 </div>
               ))}
+
+                              <LanguageDropdown currentLang={lang} />
+
             </nav>
           </motion.div>
         </>
@@ -250,7 +254,7 @@ const omvSubItems = useMemo(() => [
   { name: dictionary.vtx || "VTX", link: `/${lang}/vtx` },
   { name: dictionary.autocare || "AutoCare 360", link: `/${lang}/autocare` },
   { name: dictionary.rhinomotive || "RhinoMotive", link: `/${lang}/rhinomotive` },
-  { name: dictionary.car_brands || "Global Business", link: `/${lang}/global-business` },
+  { name: dictionary.global_business || "Global Business", link: `/${lang}/global-business` },
 ], [dictionary, lang]);
 
 const companyNavItems = useMemo(() => [
