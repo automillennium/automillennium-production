@@ -287,7 +287,7 @@ const Page = () => {
 
                 {/* Service Details Card (The card body is NOT tagged, but its contents are) */}
                 <div
-                  className="service-item p-6 bg-zinc-900 border border-zinc-800 rounded-b-3xl shadow-xl transition duration-300 group-hover:shadow-cyan-500/20 group-hover:bg-zinc-800/80 h-[260px]"
+                  className="service-item p-6 bg-zinc-900 border border-zinc-800 rounded-b-3xl shadow-xl transition duration-300 group-hover:shadow-cyan-500/20 group-hover:bg-zinc-800/80 min-h-[240px]"
                 >
                   <h3 className="text-xl font-bold text-white mb-3 fade-scroll">{service.title}</h3>
                   

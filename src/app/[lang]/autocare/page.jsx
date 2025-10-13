@@ -137,7 +137,7 @@ const Page = () => {
         <section className="page-main-text py-20 px-4 md:px-8 text-center bg-black">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-white text-5xl md:text-7xl font-extrabold tracking-tight mb-4 leading-snug">
-              Welcome to <span className="text-cyan-400">Auto Care 360</span>
+              Welcome to <span className="text-gray-400">Auto Care 360</span>
             </h1>
             <p className="text-gray-400 text-xl md:text-2xl font-medium max-w-3xl mx-auto mb-10">
               Premium Automotive Services. Trusted Partnerships. Total Care.
@@ -222,7 +222,7 @@ const Page = () => {
             {/* Powered by People Card */}
             <div className="fade-in-text bg-zinc-900/70 border border-zinc-800 rounded-3xl p-8 md:p-12 transition duration-300 hover:bg-zinc-800/80">
               <div className="mb-8">
-                <span className="fade-in-text text-5xl md:text-7xl font-extrabold text-cyan-400 block leading-none">
+                <span className="fade-in-text text-5xl md:text-7xl font-extrabold text-yellow-400 block leading-none">
                   1,000+
                 </span>
                 <p className="fade-in-text text-xl text-gray-400 font-medium mt-1">
@@ -248,7 +248,7 @@ const Page = () => {
             {/* What Sets Us Apart Card */}
             <div className="fade-in-text bg-zinc-900/70 border border-zinc-800 rounded-3xl p-8 md:p-12 transition duration-300 hover:bg-zinc-800/80">
               <div className="mb-8">
-                <span className="fade-in-text text-5xl md:text-7xl font-extrabold text-cyan-400 block leading-none">
+                <span className="fade-in-text text-5xl md:text-7xl font-extrabold text-yellow-400 block leading-none">
                   360°
                 </span>
                 <p className="fade-in-text text-xl text-gray-400 font-medium mt-1">
