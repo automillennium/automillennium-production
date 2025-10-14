@@ -16,7 +16,7 @@ const EmblaCarousel = (props) => {
       stopOnMouseEnter: false, // Don't stop when mouse hovers
       stopOnFocusIn: false, // Don't stop when focused
       speed: 1, // Adjust speed (1 = normal, 2 = double speed, 0.5 = half speed)
-      delay: 0 // Delay between scrolls in milliseconds
+      delay: 0.4 // Delay between scrolls in milliseconds
     })
   ])
   const [isPlaying, setIsPlaying] = useState(false)
