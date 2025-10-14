@@ -54,11 +54,11 @@ const PROJECT_BRANDS_CATEGORIES = [
 const EMBLA_OPTIONS = { loop: true };
 const EMBLA_SLIDES = [
   "/videos/delivery-one.mp4",
+  "/videos/delivery-two.mp4",
+  "/videos/delivery-three.mp4",
   "/videos/delivery-one.mp4",
-  "/videos/delivery-one.mp4",
-  "/videos/delivery-one.mp4",
-  "/videos/delivery-one.mp4",
-  "/videos/delivery-one.mp4",
+  "/videos/delivery-two.mp4",
+  "/videos/delivery-three.mp4",
 ];
 const VIDEO_URL = "https://automillennium.com/wp-content/uploads/2022/03/RetroFit-Final.mp4";
 const FALLBACK_POSTER_URL = "/img/vtx-fallback-poster.jpg";
