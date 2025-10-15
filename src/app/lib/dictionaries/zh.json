@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "retail_section": "零售",
+    "omv_section": "OMV 解决方案",
+    "company_section": "公司",
+    "car_brands": "定制项目",
+    "events": "活动",
+    "our_teams": "认识我们的团队",
+    "language": "语言",
+    "luxury_brands": "豪华品牌",
+    "premium_brands": "高端品牌",
+    "volume_brands": "大众品牌",
+    "projects": {
+      "rolls_royce": "劳斯莱斯",
+      "bentley": "宾利",
+      "mclaren": "迈凯伦",
+      "aston_martin": "阿斯顿·马丁",
+      "porsche": "保时捷",
+      "mercedes": "梅赛德斯",
+      "land_rover": "路虎",
+      "alfa_romeo": "阿尔法·罗密欧",
+      "hummer": "悍马",
+      "tesla": "特斯拉",
+      "ineos": "英力士",
+      "corvette": "科尔维特",
+      "lexus": "雷克萨斯",
+      "genesis": "捷尼赛思",
+      "kia": "起亚",
+      "hyundai": "现代",
+      "mg": "名爵",
+      "toyota": "丰田",
+      "nissan": "日产",
+      "ford": "福特",
+      "jeep": "吉普"
+    },
+    "rox": "ROX",
+    "vtx": "VTX",
+    "autocare": "汽车保养360",
+    "rhinomotive": "犀牛汽车科技",
+    "global_business": "全球业务"
+  },
+
+  "globalBusiness": {
+    "title": "全球豪华出行解决方案",
+    "description": "LUSSO 提供涵盖整个汽车领域的一站式解决方案——从车辆改装和批量定制到高端豪华定制与优质服务。",
+    "logoAlt": "Lusso 标志",
+    "loadingText": "加载体验中……",
+    "videoErrorTitle": "视频加载失败",
+    "videoErrorText": "加载视频内容时出现问题。",
+    "retryButton": "重新加载",
+    "browserSupport": "您的浏览器不支持 HTML5 视频。",
+    "storyTitle": "我们的故事",
+    "story1": "LUSSO DESIGNS INDIA PVT LTD 是一家全球领先的豪华出行解决方案提供商，专注于车辆改装与个性化定制。Lusso 提供覆盖整个汽车领域的一站式解决方案——从车辆改装与批量定制到高端豪华定制与服务，充分展现卓越与精致。",
+    "story2": "作为全球领先的车辆改装跨国企业，我们在印度、中东和西欧拥有超过 50 万名满意客户，并拥有超过 50 年的辉煌历史。我们不断重新定义创新、工艺与出行方式。",
+    "philosophyTitle": "理念",
+    "philosophy": "在 LUSSO DESIGNS，我们以精确、创新与艺术重新定义奢华。每一件作品都体现独特个性，将尖端科技与永恒优雅完美融合。凭借对工艺的热情，我们的先进设计工作室由资深设计师领导，并由经验丰富的工匠支持，确保每件作品都凝聚精确、热情与创新。对我们而言，奢华不仅仅是设计，更是一种永恒优雅的体验。"
+  }
+}

@@ -104,14 +104,13 @@ const TestimonialsSection = ({ testimonials = DEMO_TESTIMONIALS }) => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 md:py-32 bg-black overflow-hidden"
+      className="py-2 md:py-6 bg-black overflow-hidden"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-6xl font-extrabold text-white text-center tracking-tighter">
-          Loved by our users.
-        </h2>
+Built for people who love great design.        </h2>
         <p className="mt-4 text-xl text-gray-400 text-center font-light tracking-wide max-w-3xl mx-auto">
           Don’t just take our word for it. Hear from those who use our product
           every day.

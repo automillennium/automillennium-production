@@ -38,25 +38,8 @@
     "autocare": "AutoCare 360",
     "rhinomotive": "RhinoMotive",
     "global_business": "Global Business"
-}
+},
 
-,
-  "hero": {
-    "title": "Your Company Name",
-    "subtitle": "Primary Tagline & Main Service",
-    "cta": "Get Started"
-  },
-  "about": {
-    "title": "About Us",
-    "description": "Your compelling business description..."
-  },
-  "business": {
-    "title": "Our Business",
-    "description": "Details about your business..."
-  },
-  "footer": {
-    "copyright": "All rights reserved."
-  },
 
     "globalBusiness": {
     "title": "Global Luxury Mobility Solutions",

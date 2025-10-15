@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import EmblaCarousel from "@/app/components/EmblaCarousal";
 import TestimonialsSection from "@/app/components/Testmonials";
+import Link from "next/link";
 
 // --- GSAP Setup ---
 gsap.registerPlugin(ScrollTrigger);
@@ -53,18 +54,20 @@ const PROJECT_BRANDS_CATEGORIES = [
 const EMBLA_OPTIONS = { loop: true };
 const EMBLA_SLIDES = [
   "/videos/delivery-one.mp4",
+  "/videos/delivery-two.mp4",
+  "/videos/delivery-three.mp4",
   "/videos/delivery-one.mp4",
-  "/videos/delivery-one.mp4",
-  "/videos/delivery-one.mp4",
-  "/videos/delivery-one.mp4",
-  "/videos/delivery-one.mp4",
+  "/videos/delivery-two.mp4",
+  "/videos/delivery-three.mp4",
 ];
 const VIDEO_URL = "https://automillennium.com/wp-content/uploads/2022/03/RetroFit-Final.mp4";
 const FALLBACK_POSTER_URL = "/img/vtx-fallback-poster.jpg";
 const LOGO_URL = "/img/rox-white.png";
 
 // --- Main Component ---
-const Page = () => {
+const Page = ({ params }) => {
+  const { lang } = params;
+
   const [isVideoReady, setIsVideoReady] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const videoRef = useRef(null);
@@ -308,8 +311,9 @@ const Page = () => {
               >
                 <div className="flex flex-col">
                   {categoryData.links.map((link, linkIndex) => (
-                    <a
-                      href={link.link}
+   // URL: http://localhost:3000/en/projects/rolls-royce
+<Link href={`/${lang}/${link.link}`}
+                      
                       key={linkIndex}
                       className={`
                         group relative flex items-center justify-between w-full text-[17px] font-light py-5 px-4
@@ -323,7 +327,7 @@ const Page = () => {
                         ›
                       </span>
                       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
