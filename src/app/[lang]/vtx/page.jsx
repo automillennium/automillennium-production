@@ -260,18 +260,18 @@ const Page = () => {
           </div>
 
           {/* === Services Section === */}
-          <section className="py-24 px-4 md:px-8 max-w-[90%] mx-auto">
+          <section className="py-24 px-4 md:px-6 max-w-[90%] mx-auto">
             {/* The Section Header is tagged */}
             <h2 className="fade-scroll text-white text-center text-5xl md:text-[56px] leading-[1.0714285714] font-semibold tracking-[-0.005em] font-sans  mb-16">
               Our Protection Services
             </h2>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mt-10 justify-center">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-10 justify-center">
               {services.map((service, i) => (
-              <div key={i} className="flex flex-col group w-full max-w-[300px] mx-auto"> 
+              <div key={i} className="flex flex-col group w-full min-w-[150px] 2xl:max-w-[300px] mx-auto"> 
                 
                 {/* Visual Element (The video container itself is tagged for animation) */}
-                <div className={`h-[300px] ${service.imagePlaceholder} rounded-t-3xl border border-zinc-700 flex items-center justify-center overflow-hidden fade-scroll`}>
+                <div className={`h-[190px] 2xl:h-[300px] ${service.imagePlaceholder} rounded-t-3xl border border-zinc-700 flex items-center justify-center overflow-hidden fade-scroll`}>
                   <video
                     src={service?.videoUrl}
                     autoPlay
@@ -287,12 +287,12 @@ const Page = () => {
 
                 {/* Service Details Card (The card body is NOT tagged, but its contents are) */}
                 <div
-                  className="service-item p-6 bg-zinc-900 border border-zinc-800 rounded-b-3xl shadow-xl transition duration-300 group-hover:shadow-cyan-500/20 group-hover:bg-zinc-800/80 min-h-[240px]"
+                  className="service-item p-4 bg-zinc-900 border border-zinc-800 rounded-b-3xl shadow-xl transition duration-300 group-hover:shadow-cyan-500/20 group-hover:bg-zinc-800/80 min-h-[190px] 2xl:min-h-[240px]"
                 >
-                  <h3 className="text-xl font-semibold text-white mb-3 fade-scroll">{service.title}</h3>
+                  <h3 className="text-[12px] 2xl:text-xl font-semibold text-white mb-3 fade-scroll text-center 2xl:text-left">{service.title}</h3>
                   
                   {/* List items are tagged */}
-                  <ul className="list-disc text-gray-400 pl-5 text-sm space-y-1"> 
+                  <ul className="list-disc text-gray-400 pl-5 text-[10px] 2xl:text-sm space-y-1"> 
                       {service.items.map((item, j) => (
                         <li key={j} className="fade-scroll">{item}</li> // Tagged LI
                       ))}
