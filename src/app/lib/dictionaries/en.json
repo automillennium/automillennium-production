@@ -55,5 +55,59 @@
     "story2": "As a leading multinational corporation in the field of vehicle transformation, with over 500,000 delighted customers across India, the Middle East, and Western Europe—and a legacy of more than 50 years—we continue to redefine innovation, craftsmanship, and mobility.",
     "philosophyTitle": "PHILOSOPHY",
     "philosophy": "At LUSSO DESIGNS, we redefine luxury through precision, innovation, and artistry. Each creation reflects individuality, blending cutting-edge technology with timeless elegance. Driven by a passion for craftsmanship—our state-of-the-art design studios, led by seasoned designers and supported by masterful craftsmen—ensure every creation reflects precision, passion, and innovation. For us, luxury is more than design; it is an experience of timeless elegance."
+  },
+
+
+
+
+  "vtxPage": {
+    "logoAlt": "VTX Logo",
+    "title": "Premium Protection. Advanced Technology.",
+    "description": "VTX is Auto Millennium's premium line of vehicle protection solutions, designed to keep your car looking brand-new while safeguarding it from harsh weather, road debris, and everyday wear. Our products combine advanced technology with professional application, ensuring your vehicle maintains its value, shine, and performance over time.",
+    "servicesTitle": "Our Protection Services",
+    "services": {
+      "ppf": {
+        "title": "Paint Protection Film (PPF)",
+        "items": [
+          "Invisible shield against chips, scratches, and debris.",
+          "High gloss finish & Self-healing technology.",
+          "Custom-cut for precision fit."
+        ]
+      },
+      "ceramic": {
+        "title": "Ceramic Coating",
+        "items": [
+          "Long-lasting hydrophobic protective layer.",
+          "Maximum UV resistance & deep gloss shine.",
+          "Easy maintenance with anti-dirt properties."
+        ]
+      },
+      "tinting": {
+        "title": "Window Tinting",
+        "items": [
+          "Superior heat rejection for cabin comfort.",
+          "Full UV protection for occupants.",
+          "Stylish, privacy-enhancing, and legally compliant shades."
+        ]
+      },
+      "detailing": {
+        "title": "Interior & Exterior Detailing",
+        "items": [
+          "Deep cleaning and material restoration.",
+          "Leather, fabric, and dashboard long-term protection.",
+          "Keeps your vehicle fresh inside-out."
+        ]
+      },
+      "custom": {
+        "title": "Tailored Protection (Custom Packages)",
+        "items": [
+          "Protection packages customized for your vehicle's needs.",
+          "Combine PPF, coating, tinting & detailing for total coverage.",
+          "Expert consultation to choose the optimal package."
+        ]
+      }
+    }
   }
+
+
 }
