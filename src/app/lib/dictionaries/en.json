@@ -107,7 +107,59 @@
         ]
       }
     }
+  },
+
+  "rhinomotive":{
+  "brand": {
+    "logoAlt": "RHINOMOTIVE Logo"
+  },
+  "hero": {
+    "title": "Automotive Supremacy.",
+    "subtitle": "Pro-Series Solutions.",
+    "description": "RHINOMOTIVE is the one-stop solution for all your automotive aftermarket products. Step into the world of automotive supremacy with our **game-changing** pro-series car care, bodyshop, and service solutions. Choosing us delivers exceptional quality and performance, setting you among the professionals."
+  },
+  "sections": {
+    "divisions": "PRODUCT DIVISIONS"
+  },
+  "divisions": {
+    "carCare": {
+      "title": "CAR CARE",
+      "description": "A wide range of the latest tech unbeatable car care products."
+    },
+    "service": {
+      "title": "SERVICE",
+      "description": "World-class OEM-approved mechanical products and exceptionally detailed Minor & Major service packages."
+    },
+    "bodyshop": {
+      "title": "BODYSHOP",
+      "description": "A comprehensive solution for collision repair, powered by advanced technology."
+    },
+    "tyreRepair": {
+      "title": "TYRE REPAIR",
+      "description": "Innovative materials and the latest technology to elevate your driving experience and extend tyre life."
+    }
+  },
+  "vision": {
+    "title": "OUR VISION",
+    "description": "Becoming the world's number one brand that provides solutions for the automotive industry."
+  },
+  "mission": {
+    "title": "OUR MISSION",
+    "description": "To provide superior quality products and services that exceeds our customer expectations."
+  },
+  "values": {
+    "title": "OUR VALUES",
+    "description": "We believe that our clients are our business partners, providing them the best possible products & services will benefit them and consequently reflect on our business."
+  },
+  "video": {
+    "unsupported": "Your browser doesn't support HTML5 video."
+  },
+  "error": {
+    "videoTitle": "Video Failed to Load",
+    "videoDescription": "There was a problem loading the video content. Displaying fallback image.",
+    "retryButton": "Retry Loading"
   }
+}
 
 
 }

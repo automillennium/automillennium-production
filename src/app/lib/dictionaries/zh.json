@@ -107,6 +107,60 @@
         ]
       }
     }
+  },
+
+  "rhinomotive" :{
+  "brand": {
+    "logoAlt": "RHINOMOTIVE 标志"
+  },
+  "hero": {
+    "title": "汽车至尊。",
+    "subtitle": "专业系列解决方案。",
+    "description": "RHINOMOTIVE 是您所有汽车售后产品的一站式解决方案。踏入汽车至尊的世界，体验我们**颠覆性**的专业系列汽车护理、车身修理和服务解决方案。选择我们可提供卓越的质量和性能，让您跻身专业人士之列。"
+  },
+  "sections": {
+    "divisions": "产品部门"
+  },
+  "divisions": {
+    "carCare": {
+      "title": "汽车护理",
+      "description": "各种最新技术无与伦比的汽车护理产品。"
+    },
+    "service": {
+      "title": "服务",
+      "description": "世界级的 OEM 批准机械产品和极其详细的小型及大型服务套餐。"
+    },
+    "bodyshop": {
+      "title": "车身修理",
+      "description": "全面的碰撞修复解决方案，由先进技术提供支持。"
+    },
+    "tyreRepair": {
+      "title": "轮胎修复",
+      "description": "创新材料和最新技术，提升您的驾驶体验并延长轮胎寿命。"
+    }
+  },
+  "vision": {
+    "title": "我们的愿景",
+    "description": "成为世界第一的汽车行业解决方案品牌。"
+  },
+  "mission": {
+    "title": "我们的使命",
+    "description": "提供超越客户期望的优质产品和服务。"
+  },
+  "values": {
+    "title": "我们的价值观",
+    "description": "我们相信客户是我们的业务伙伴，为他们提供最好的产品和服务将使他们受益，并因此反映在我们的业务上。"
+  },
+  "video": {
+    "unsupported": "您的浏览器不支持 HTML5 视频。"
+  },
+  "error": {
+    "videoTitle": "视频加载失败",
+    "videoDescription": "加载视频内容时出现问题。显示备用图像。",
+    "retryButton": "重新加载"
   }
+}
+
+
 
 }
